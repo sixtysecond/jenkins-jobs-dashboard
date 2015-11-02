@@ -1,10 +1,12 @@
-package org.sixtysecond.jenkins;
+package org.sixtysecond.dashboard.service;
 
-import org.sixtysecond.jenkins.health.TemplateHealthCheck;
-import org.sixtysecond.jenkins.resources.HelloWorldResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
+import org.sixtysecond.dashboard.config.HelloWorldConfiguration;
+import org.sixtysecond.dashboard.service.health.TemplateHealthCheck;
+import org.sixtysecond.dashboard.service.resources.HelloWorldResource;
+import org.sixtysecond.dashboard.service.resources.JenkinsQueryResource;
 
 public class JenkinsQueryService extends Service<HelloWorldConfiguration> {
     public static void main(String[] args) throws Exception {
@@ -22,6 +24,7 @@ public class JenkinsQueryService extends Service<HelloWorldConfiguration> {
         final String template = configuration.getTemplate();
         final String defaultName = configuration.getDefaultName();
         environment.addResource(new HelloWorldResource(template, defaultName));
+        environment.addResource(new JenkinsQueryResource());
         environment.addHealthCheck(new TemplateHealthCheck(template));
     }
 

@@ -1,9 +1,10 @@
-package org.sixtysecond.jenkins.resources;
+package org.sixtysecond.dashboard.service.resources;
 
-import org.sixtysecond.jenkins.core.JenkinsQuery;
-import org.sixtysecond.jenkins.core.JenkinsQueryResponse;
+
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
+import org.sixtysecond.dashboard.jenkins.JenkinsQuery;
+import org.sixtysecond.dashboard.jenkins.JenkinsQueryResponse;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

@@ -1,6 +1,6 @@
-package org.sixtysecond.jenkins.resources;
+package org.sixtysecond.dashboard.service.resources;
 
-import org.sixtysecond.jenkins.core.Saying;
+import org.sixtysecond.dashboard.hello.Saying;
 import com.google.common.base.Optional;
 import com.yammer.metrics.annotation.Timed;
 

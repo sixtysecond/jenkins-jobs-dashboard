@@ -1,4 +1,4 @@
-package org.sixtysecond.jenkins.health;
+package org.sixtysecond.dashboard.service.health;
 
 import com.yammer.metrics.core.HealthCheck;
 

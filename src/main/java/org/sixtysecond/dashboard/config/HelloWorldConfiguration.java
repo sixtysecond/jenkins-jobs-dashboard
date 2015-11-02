@@ -1,4 +1,4 @@
-package org.sixtysecond.jenkins;
+package org.sixtysecond.dashboard.config;
 
 import com.yammer.dropwizard.config.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package org.sixtysecond.jenkins.core;
+package org.sixtysecond.dashboard.jenkins;
 
 import java.util.concurrent.Callable;
 

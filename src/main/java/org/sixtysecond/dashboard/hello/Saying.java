@@ -1,4 +1,4 @@
-package org.sixtysecond.jenkins.core;
+package org.sixtysecond.dashboard.hello;
 
 public class Saying {
     private final long id;
