@@ -2,7 +2,7 @@ package com.example.helloworld.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
-import org.sixtysecond.dashboard.jenkins.JenkinsQueryResponse;
+import org.sixtysecond.dashboard.jenkins.JenkinsQueryResults;
 
 import javax.ws.rs.*;
 import javax.ws.rs.client.Client;
@@ -23,11 +23,11 @@ public class JenkinsQueryResource {
 
     @GET
     @Timed
-    public JenkinsQueryResponse queryJenkins(@QueryParam("jenkinsServerUrl") Optional<String> jenkinsServerUrl,
+    public JenkinsQueryResults queryJenkins(@QueryParam("jenkinsServerUrl") Optional<String> jenkinsServerUrl,
 
                                @QueryParam("jenkinsJobPattern") Optional<String> jenkinsJobPattern) {
 
         //TODO: implement
-        return new JenkinsQueryResponse();
+        return new JenkinsQueryResults();
     }
 }
