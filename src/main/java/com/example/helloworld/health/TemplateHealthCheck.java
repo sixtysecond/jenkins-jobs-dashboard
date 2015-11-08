@@ -1,12 +1,11 @@
-package org.sixtysecond.dashboard.service.health;
+package com.example.helloworld.health;
 
-import com.yammer.metrics.core.HealthCheck;
+import com.codahale.metrics.health.HealthCheck;
 
 public class TemplateHealthCheck extends HealthCheck {
     private final String template;
 
     public TemplateHealthCheck(String template) {
-        super("template");
         this.template = template;
     }
 
@@ -18,5 +17,4 @@ public class TemplateHealthCheck extends HealthCheck {
         }
         return Result.healthy();
     }
-
 }
