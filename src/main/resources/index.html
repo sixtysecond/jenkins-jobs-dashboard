@@ -1,0 +1,72 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function postJobQuery() {
+
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for older browsers
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    //TODO: parse data
+                    document.getElementById("result").innerHTML =
+                            xmlhttp.responseText;
+                }
+            }
+
+            xmlhttp.open("POST", "/jenkins-job", true);
+
+            xmlhttp.setRequestHeader("Content-Type", "application/json");
+
+            xmlhttp.send(jobQuery.value);
+
+        }
+    </script>
+</head>
+<body>
+<h1>Jenkins Job Dashboard</h1>
+
+
+<label for="jobQueryTop">Please submit a query payload</label>
+
+<div id="jobQueryTop"></div>
+<textarea id="jobQuery" name="jobQuery" rows="20" cols="100"></textarea>
+<br>
+<button onclick="postJobQuery()">Submit</button>
+
+<div id="result" name="result"></div>
+
+<h2>sample payload #1:</h2>
+<pre>
+[
+    {
+        "jenkinsServerUrl" : "https://builds.apache.org"
+        ,"jenkinsJobPattern" : "Accumulo-1.7"
+    }
+]
+</pre>
+
+<h2>sample payload #2:</h2>
+<pre>
+
+
+[
+    {
+        "jenkinsServerUrl" : "http://you-jenkins-server-goes-here.domain"
+        ,"jenkinsJobPattern" : "job name regex goes here"
+    },
+    {
+        "jenkinsServerUrl" : "https://fake-jenkins-server.org"
+        ,"jenkinsJobPattern" : "widget.*?"
+    }
+]
+
+
+</pre>
+
+</body>
+</html>
