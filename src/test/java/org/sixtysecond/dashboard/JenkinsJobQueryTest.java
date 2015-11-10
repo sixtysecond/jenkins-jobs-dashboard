@@ -1,6 +1,7 @@
 package org.sixtysecond.dashboard;
 
 import com.example.helloworld.resources.JenkinsJobQueryResource;
+import com.example.helloworld.resources.JenkinsJobQuerySingleResource;
 import org.json.JSONObject;
 import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
 import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
@@ -22,8 +23,8 @@ public class JenkinsJobQueryTest {
     @Test
 
     public void jenkinsJobQueryGetTest() {
-//        String jenkinsServerUrl = "https://builds.apache.org";
-//        String jobNamePattern = "Ambari.*?";
+        //        String jenkinsServerUrl = "https://builds.apache.org";
+        //        String jobNamePattern = "Ambari.*?";
 
         String jenkinsServerUrl = "https://builds.apache.org";
         String jobNamePattern = "Accumulo-1.7";
@@ -51,7 +52,25 @@ public class JenkinsJobQueryTest {
         assertThat(response.getStatus(), is(200));
 
 
-        System.out.println("jsonArray="+response.getEntity().toString());
+        System.out.println("jsonArray=" + response.getEntity()
+                .toString());
+
+    }
+
+
+    @Test
+    public void jenkinsJobQuerySinglePostTest() {
+
+        String jenkinsServerUrl = "https://builds.apache.org";
+        String jobNamePattern = "Accumulo-1.6";
+        JenkinsJobQuery jenkinsJobQuery = new JenkinsJobQuery(jenkinsServerUrl, jobNamePattern);
+
+        Response response = new JenkinsJobQuerySingleResource().queryJenkins(jenkinsJobQuery);
+        assertThat(response.getStatus(), is(200));
+
+
+        System.out.println("jsonArray=" + response.getEntity()
+                .toString());
 
     }
 }

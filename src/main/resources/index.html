@@ -18,7 +18,7 @@
                 }
             }
 
-            xmlhttp.open("POST", "/jenkins-job", true);
+            xmlhttp.open("POST", "/jenkins-job-single", true);
 
             xmlhttp.setRequestHeader("Content-Type", "application/json");
 
@@ -45,7 +45,7 @@
 [
     {
         "jenkinsServerUrl" : "https://builds.apache.org"
-        ,"jenkinsJobPattern" : "Accumulo-1.7"
+        ,"jobNamePattern" : "Accumulo-1.7"
     }
 ]
 </pre>
@@ -61,7 +61,7 @@
     },
     {
         "jenkinsServerUrl" : "https://fake-jenkins-server.org"
-        ,"jenkinsJobPattern" : "widget.*?"
+        ,"jobNamePattern" : "widget.*?"
     }
 ]
 

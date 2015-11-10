@@ -20,7 +20,7 @@ public class JenkinsJobQueryCallable implements Callable<JSONObject> {
 
     private final JenkinsJobQuery jenkinsJobQuery;
 
-    public JenkinsJobQueryCallable(JenkinsJobQuery jenkinsJobQuery) {
+    public JenkinsJobQueryCallable( JenkinsJobQuery jenkinsJobQuery) {
         this.jenkinsJobQuery = jenkinsJobQuery;
     }
 
@@ -34,7 +34,7 @@ public class JenkinsJobQueryCallable implements Callable<JSONObject> {
         response.put("lastBuilds", lastBuilds);
         response.put("jobs", matchingJobs);
         response.put("jenkinsServerUrl", jenkinsJobQuery.getJenkinsServerUrl());
-        response.put("jobNamePattern", jenkinsJobQuery.getJobNamePattern());
+        response.put("jobNamePattern",  jenkinsJobQuery.getJobNamePattern());
         return response;
     }
 

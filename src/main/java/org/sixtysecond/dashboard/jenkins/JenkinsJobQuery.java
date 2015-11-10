@@ -42,4 +42,11 @@ public class JenkinsJobQuery {
     }
 
 
+    @Override
+    public String toString() {
+        return "JenkinsJobQuery{" +
+                "jenkinsServerUrl='" + jenkinsServerUrl + '\'' +
+                ", jobNamePattern='" + jobNamePattern + '\'' +
+                '}';
+    }
 }

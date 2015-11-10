@@ -3,14 +3,16 @@ package org.sixtysecond.dashboard;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.dropwizard.jackson.Jackson;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.junit.Test;
 import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
-import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static io.dropwizard.testing.FixtureHelpers.fixture;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -20,8 +22,20 @@ import static org.hamcrest.core.Is.is;
 public class SerializeTest {
 
 
+    private static final ObjectMapper MAPPER = Jackson.newObjectMapper();
+
     @Test
-    public void doSerializeTest() throws JsonProcessingException {
+    public void doDeserializeTest() throws IOException {
+
+        List<JenkinsJobQuery> jenkinsJobQueryList = MAPPER.readValue(fixture("fixtures/jenkinsJobQuery2.json"), new TypeReference<List<JenkinsJobQuery>>() {
+        });
+        System.out.println("jenkinsJobQueryList=" + new ReflectionToStringBuilder(jenkinsJobQueryList).toString());
+        assertThat(jenkinsJobQueryList.size(), is(2));
+        System.out.println(jenkinsJobQueryList.get(0));
+    }
+
+    @Test
+    public void serializeTwoItemsTest() throws JsonProcessingException {
         List<JenkinsJobQuery> jenkinsJobQueryList = new ArrayList<JenkinsJobQuery>();
         {
             String jenkinsServerUrl = "https://builds.apache.org";
@@ -34,26 +48,19 @@ public class SerializeTest {
             jenkinsJobQueryList.add(new JenkinsJobQuery(jenkinsServerUrl, jobNamePattern));
         }
 
-        String expected="[{\"jenkinsServerUrl\":\"https://builds.apache.org\",\"jobNamePattern\":\"Accumulo-1.6\"},{\"jenkinsServerUrl\":\"https://builds.apache.org\",\"jobNamePattern\":\"Accumulo-1.7\"}]";
-        ObjectMapper mapper = new ObjectMapper();
-        final String actual = mapper.writeValueAsString(jenkinsJobQueryList);
-        System.out.println("payload=" + actual);
-        assertThat(actual, is(expected));
+        assertThat(MAPPER.writeValueAsString(jenkinsJobQueryList)
+                , is(fixture("fixtures/jenkinsJobQuery2.json")));
     }
 
+
     @Test
-    public void doDeserializeTest() throws IOException {
-        String json="[{\"jenkinsServerUrl\":\"https://builds.apache.org\",\"jobNamePattern\":\"Accumulo-1.6\"},{\"jenkinsServerUrl\":\"https://builds.apache.org\",\"jobNamePattern\":\"Accumulo-1.7\"}]";
-        System.out.println("json="+json);
-        ObjectMapper mapper = new ObjectMapper();
+    public void serializeOneItemTest() throws Exception {
+        final List<JenkinsJobQuery> jenkinsJobQueryList = new ArrayList<JenkinsJobQuery>();
+        jenkinsJobQueryList.add(new JenkinsJobQuery().setJenkinsServerUrl("https://builds.apache.org")
+                .setJobNamePattern("Accumulo-1.7"));
+        assertThat(MAPPER.writeValueAsString(jenkinsJobQueryList)
+                , is(fixture("fixtures/jenkinsJobQuery1.json")));
+    }
 
-        List<JenkinsJobQuery> jenkinsJobQueryList = mapper.readValue(json, new TypeReference<List<JenkinsJobQuery>>(){});
-        System.out.println("jenkinsJobQueryList="+ new ReflectionToStringBuilder(jenkinsJobQueryList).toString());
-        assertThat(jenkinsJobQueryList.size(), is(2));
-
-//        List<MyClass> myObjects = mapper.readValue(jsonInput, mapper.getTypeFactory().constructCollectionType(List.class, MyClass.class));
-//
-//        mapper.readValue(jsonArray, List<JenkinsJobQuery>)
-     }
 
 }
