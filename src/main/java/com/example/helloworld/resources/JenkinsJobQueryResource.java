@@ -52,7 +52,7 @@ public class JenkinsJobQueryResource {
             jsonArray.put(i, new JenkinsJobQueryCallable(jenkinsJobQuery).call());
         }
         return Response.ok()
-                .entity(jsonArray)
+                .entity(jsonArray.toString())
                 .build();
     }
 

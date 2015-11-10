@@ -3,6 +3,8 @@ package org.sixtysecond.dashboard;
 
 import com.example.helloworld.HelloWorldApplication;
 import com.example.helloworld.HelloWorldConfiguration;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
 import org.glassfish.jersey.client.JerseyClientBuilder;
@@ -26,7 +28,7 @@ public class JenkinsQueryIntegrationTest {
                     ResourceHelpers.resourceFilePath("hello-world.yml"));
 
     @Test
-    public void runServerTest() {
+    public void runServerTest() throws JsonProcessingException {
         Client client = new JerseyClientBuilder().build();
 
         List<JenkinsJobQuery> jenkinsJobQueryList = new ArrayList<JenkinsJobQuery>();
@@ -41,11 +43,13 @@ public class JenkinsQueryIntegrationTest {
             jenkinsJobQueryList.add(new JenkinsJobQuery(jenkinsServerUrl, jobNamePattern));
         }
 
-        Response response = client.target(
-                String.format("http://localhost:%d/jenkins-job-single", RULE.getLocalPort())
-        )
+        ObjectMapper mapper = new ObjectMapper();
+        String payload = mapper.writeValueAsString(jenkinsJobQueryList);
+        System.out.println("payload="+payload);
+        Response response = client
+                .target(String.format("http://localhost:%d/jenkins-job-single", RULE.getLocalPort()))
                 .request()
-                .post(Entity.entity(jenkinsJobQueryList, MediaType.APPLICATION_JSON));
+                .post(Entity.entity(payload, MediaType.APPLICATION_JSON));
         System.out.println("headers=" + response.getStringHeaders());
         System.out.println("statusInfo=" + response.getStatusInfo()
                 .toString());
@@ -83,7 +87,7 @@ public class JenkinsQueryIntegrationTest {
         if (response.hasEntity()) {
             String responseString =  response.readEntity(String.class);
 
-            System.out.println("responseString="+responseString);
+            System.out.println("responseString=" + responseString);
         } else {
             System.out.println("response=" + response.toString());
         }

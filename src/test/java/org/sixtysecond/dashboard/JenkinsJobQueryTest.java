@@ -48,7 +48,9 @@ public class JenkinsJobQueryTest {
             jenkinsJobQueryList.add(new JenkinsJobQuery(jenkinsServerUrl, jobNamePattern));
         }
 
-        Response response = new JenkinsJobQueryResource().queryJenkins(jenkinsJobQueryList);
+        Response response =
+                new JenkinsJobQueryResource()
+                        .queryJenkins(jenkinsJobQueryList);
         assertThat(response.getStatus(), is(200));
 
 

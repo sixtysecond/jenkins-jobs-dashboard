@@ -5,8 +5,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.jackson.Jackson;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.json.JSONObject;
 import org.junit.Test;
 import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
+import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,7 +29,8 @@ public class SerializeTest {
     @Test
     public void doDeserializeTest() throws IOException {
 
-        List<JenkinsJobQuery> jenkinsJobQueryList = MAPPER.readValue(fixture("fixtures/jenkinsJobQuery2.json"), new TypeReference<List<JenkinsJobQuery>>() {
+        List<JenkinsJobQuery> jenkinsJobQueryList =
+                MAPPER.readValue(fixture("fixtures/jenkinsJobQuery2.json"), new TypeReference<List<JenkinsJobQuery>>() {
         });
         System.out.println("jenkinsJobQueryList=" + new ReflectionToStringBuilder(jenkinsJobQueryList).toString());
         assertThat(jenkinsJobQueryList.size(), is(2));
@@ -62,5 +65,15 @@ public class SerializeTest {
                 , is(fixture("fixtures/jenkinsJobQuery1.json")));
     }
 
+
+    @Test
+    public void serializeJsonObjectTest() throws JsonProcessingException {
+
+        JenkinsJobQuery jenkinsJobQuery = new JenkinsJobQuery().setJenkinsServerUrl("https://builds.apache.org")
+                .setJobNamePattern("Accumulo-1.7");
+        JSONObject jsonObject = new JenkinsJobQueryCallable(jenkinsJobQuery).call();
+        System.out.println(jsonObject.toString());
+
+    }
 
 }

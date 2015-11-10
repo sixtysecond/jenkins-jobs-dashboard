@@ -44,7 +44,7 @@ public class JenkinsJobQuerySingleResource {
     public Response queryJenkins(JenkinsJobQuery jenkinsJobQuery) {
         JSONObject jsonObject = new JenkinsJobQueryCallable(jenkinsJobQuery).call();
         return Response.ok()
-                .entity(jsonObject)
+                .entity(jsonObject.toString())
                 .build();
     }
 }
