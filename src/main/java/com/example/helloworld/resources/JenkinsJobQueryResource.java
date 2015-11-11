@@ -33,11 +33,17 @@ public class JenkinsJobQueryResource {
 
                                    @QueryParam("jenkinsJobPattern") Optional<String> jenkinsJobPattern) {
 
-        return new JenkinsJobQueryCallable(
-                new JenkinsJobQuery()
-                        .setJenkinsServerUrl(jenkinsServerUrl.get())
-                        .setJobNamePattern(jenkinsJobPattern.get())
-        ).call();
+        try {
+            return new JenkinsJobQueryCallable(
+                    new JenkinsJobQuery()
+                            .setJenkinsServerUrl(jenkinsServerUrl.get())
+                            .setJobNamePattern(jenkinsJobPattern.get())
+            ).call();
+        } catch (Exception e) {
+            JSONObject response = new JSONObject();
+            response.put("stackTrace", e.getStackTrace());
+            return response;
+        }
     }
 
     @POST
@@ -55,6 +61,7 @@ public class JenkinsJobQueryResource {
             JenkinsJobQuery jenkinsJobQuery = jenkinsJobQueryList.get(i);
             JenkinsJobQueryCallable callable = new JenkinsJobQueryCallable(jenkinsJobQuery);
             Future<JSONObject> futureJsonObject = executorService.submit(callable);
+            futureResponses.add(futureJsonObject);
         }
 
         try {

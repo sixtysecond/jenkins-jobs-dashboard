@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Callable;
+import java.util.concurrent.*;
 import java.util.regex.Pattern;
 
 import static com.jayway.restassured.RestAssured.given;
@@ -20,11 +20,12 @@ public class JenkinsJobQueryCallable implements Callable<JSONObject> {
 
     private final JenkinsJobQuery jenkinsJobQuery;
 
+
     public JenkinsJobQueryCallable( JenkinsJobQuery jenkinsJobQuery) {
         this.jenkinsJobQuery = jenkinsJobQuery;
     }
 
-    public JSONObject call() {
+    public JSONObject call() throws ExecutionException, InterruptedException {
 
         Map<String, JSONObject> jobMap = getJobsForUrl(jenkinsJobQuery.getJenkinsServerUrl());
         Map<String, JSONObject> matchingJobs = filterJsonObjectMap(jobMap, jenkinsJobQuery.getJobNamePattern());
@@ -38,53 +39,29 @@ public class JenkinsJobQueryCallable implements Callable<JSONObject> {
         return response;
     }
 
-    public Map<String, LastBuildResponse> getLastBuilds(Map<String, JSONObject> matchingJobs, String jenkinsServer) {
+    public Map<String, LastBuildResponse> getLastBuilds(Map<String, JSONObject> matchingJobs, String jenkinsServer)
+            throws InterruptedException, ExecutionException {
 
+        ExecutorService executorService = Executors.newCachedThreadPool();
 
-        Map<String, LastBuildResponse> jsonResponseMap = new HashMap<String, LastBuildResponse>();
+        Map<String, Future<LastBuildResponse>> futureJsonResponseMap = new HashMap<String, Future<LastBuildResponse>>();
 
         for (Map.Entry<String, JSONObject> entry : matchingJobs.entrySet()) {
-            LastBuildResponse lastBuildResponse = getLastBuild(jenkinsServer, entry.getKey());
-            jsonResponseMap.put(entry.getKey(), lastBuildResponse);
+            LastBuildCallable lastBuildCallable = new LastBuildCallable(jenkinsServer, entry.getKey());
+            Future<LastBuildResponse> futureLastBuildResponse = executorService.submit(lastBuildCallable);
+            futureJsonResponseMap.put(entry.getKey(), futureLastBuildResponse);
+        }
+        executorService.shutdown();
+        executorService.awaitTermination(60, TimeUnit.SECONDS);
+
+        Map<String, LastBuildResponse> jsonResponseMap = new HashMap<String, LastBuildResponse>();
+        for ( Map.Entry<String, Future<LastBuildResponse>> entry : futureJsonResponseMap.entrySet()) {
+            jsonResponseMap.put(entry.getKey(), entry.getValue().get());
         }
         return jsonResponseMap;
     }
 
-    public LastBuildResponse getLastBuild(String jenkinsServer, String jobName) {
-        //        String lastBuildUrl = "<jenkinsServer>/job/<jobName>/lastBuild/api/json?pretty=true".replace("<jenkinsServer>", jenkinsServer)
-        //                .replace("<jobName>", jobName);
 
-        String lastBuildUrl = "<jenkinsServer>/job/<jobName>/lastBuild/api/json?pretty=false".replace("<jenkinsServer>", jenkinsServer)
-                .replace("<jobName>", jobName);
-
-        //        System.out.println("lastBuildUrl="+lastBuildUrl);
-        Response response = given().when()
-                .get(lastBuildUrl)
-                .andReturn();
-
-        String message = "";
-        JSONObject jsonObject = null;
-        if (response.statusCode() == 200) {
-            try {
-                jsonObject = new JSONObject(response.asString());
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-
-        String body = "";
-        if (response.getBody() != null) {
-            body = response.getBody()
-                    .asString();
-        }
-
-        return new LastBuildResponse()
-                //.setMessage(body)
-                .setLastBuild(jsonObject)
-                .setStatusCode(response.getStatusCode());
-
-
-    }
 
     public Map<String, JSONObject> getJobsForUrl(String jenknisServerUrl) {
         String jobsUrl = jenknisServerUrl + "/api/json?pretty=false";

@@ -13,6 +13,7 @@ import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import static io.dropwizard.testing.FixtureHelpers.fixture;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -67,7 +68,7 @@ public class SerializeTest {
 
 
     @Test
-    public void serializeJsonObjectTest() throws JsonProcessingException {
+    public void serializeJsonObjectTest() throws JsonProcessingException, ExecutionException, InterruptedException {
 
         JenkinsJobQuery jenkinsJobQuery = new JenkinsJobQuery().setJenkinsServerUrl("https://builds.apache.org")
                 .setJobNamePattern("Accumulo-1.7");
