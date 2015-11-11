@@ -28,7 +28,6 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
                     Environment environment) {
 
         environment.jersey().register(new IndexResource());
-        environment.jersey().register(new JenkinsJobQuerySingleResource());
         environment.jersey().register(new JenkinsJobQueryResource());
         environment.getObjectMapper().setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 

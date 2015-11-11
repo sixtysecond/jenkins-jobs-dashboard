@@ -10,7 +10,9 @@ import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Path("/jenkins-job")
@@ -46,11 +48,33 @@ public class JenkinsJobQueryResource {
     public Response queryJenkins(List<JenkinsJobQuery> jenkinsJobQueryList) {
 
         JSONArray jsonArray = new JSONArray();
+        ExecutorService executorService = Executors.newCachedThreadPool();
 
+        List<Future<JSONObject>> futureResponses = new ArrayList<Future<JSONObject>>();
         for (int i = 0; i < jenkinsJobQueryList.size(); i++) {
             JenkinsJobQuery jenkinsJobQuery = jenkinsJobQueryList.get(i);
-            jsonArray.put(i, new JenkinsJobQueryCallable(jenkinsJobQuery).call());
+            JenkinsJobQueryCallable callable = new JenkinsJobQueryCallable(jenkinsJobQuery);
+            Future<JSONObject> futureJsonObject = executorService.submit(callable);
         }
+
+        try {
+            executorService.shutdown();
+            executorService.awaitTermination(60, TimeUnit.SECONDS);
+            for (Future<JSONObject> futureJsonObject : futureResponses) {
+                jsonArray.put(futureJsonObject.get());
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity(e.getStackTrace())
+                    .build();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return Response.status(Response.Status.GATEWAY_TIMEOUT)
+                    .entity(e.getStackTrace())
+                    .build();
+        }
+
         return Response.ok()
                 .entity(jsonArray.toString())
                 .build();

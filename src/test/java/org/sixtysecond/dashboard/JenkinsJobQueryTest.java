@@ -1,11 +1,10 @@
 package org.sixtysecond.dashboard;
 
 import com.example.helloworld.resources.JenkinsJobQueryResource;
-import com.example.helloworld.resources.JenkinsJobQuerySingleResource;
 import org.json.JSONObject;
+import org.junit.Test;
 import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
 import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
-import org.testng.annotations.Test;
 
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -14,6 +13,8 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
+//import org.testng.annotations.Test;
+
 
 /**
  * Created by edriggs on 11/2/15.
@@ -21,7 +22,6 @@ import static org.hamcrest.core.Is.is;
 public class JenkinsJobQueryTest {
 
     @Test
-
     public void jenkinsJobQueryGetTest() {
         //        String jenkinsServerUrl = "https://builds.apache.org";
         //        String jobNamePattern = "Ambari.*?";
@@ -59,20 +59,4 @@ public class JenkinsJobQueryTest {
 
     }
 
-
-    @Test
-    public void jenkinsJobQuerySinglePostTest() {
-
-        String jenkinsServerUrl = "https://builds.apache.org";
-        String jobNamePattern = "Accumulo-1.6";
-        JenkinsJobQuery jenkinsJobQuery = new JenkinsJobQuery(jenkinsServerUrl, jobNamePattern);
-
-        Response response = new JenkinsJobQuerySingleResource().queryJenkins(jenkinsJobQuery);
-        assertThat(response.getStatus(), is(200));
-
-
-        System.out.println("jsonArray=" + response.getEntity()
-                .toString());
-
-    }
 }

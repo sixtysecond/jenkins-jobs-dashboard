@@ -45,9 +45,9 @@ public class JenkinsQueryIntegrationTest {
 
         ObjectMapper mapper = new ObjectMapper();
         String payload = mapper.writeValueAsString(jenkinsJobQueryList);
-        System.out.println("payload="+payload);
+        System.out.println("payload=" + payload);
         Response response = client
-                .target(String.format("http://localhost:%d/jenkins-job-single", RULE.getLocalPort()))
+                .target(String.format("http://localhost:%d/jenkins-job", RULE.getLocalPort()))
                 .request()
                 .post(Entity.entity(payload, MediaType.APPLICATION_JSON));
         System.out.println("headers=" + response.getStringHeaders());
@@ -65,33 +65,5 @@ public class JenkinsQueryIntegrationTest {
 
     }
 
-    @Test
-    public void runSingleServerTest() {
-        Client client = new JerseyClientBuilder().build();
 
-        String jenkinsServerUrl = "https://builds.apache.org";
-        String jobNamePattern = "Accumulo-1.7";
-        JenkinsJobQuery jenkinsJobQuery = new JenkinsJobQuery(jenkinsServerUrl, jobNamePattern);
-
-        Response response = client.target(
-                String.format("http://localhost:%d/jenkins-job-single", RULE.getLocalPort())
-        )
-                .request()
-                .post(Entity.entity(jenkinsJobQuery, MediaType.APPLICATION_JSON));
-        System.out.println("headers=" + response.getStringHeaders());
-        System.out.println("statusInfo=" + response.getStatusInfo()
-                .toString());
-        System.out.println("status=" + response.getStatus());
-
-
-        if (response.hasEntity()) {
-            String responseString =  response.readEntity(String.class);
-
-            System.out.println("responseString=" + responseString);
-        } else {
-            System.out.println("response=" + response.toString());
-        }
-        assertThat(response.getStatus()).isEqualTo(200);
-
-    }
 }
