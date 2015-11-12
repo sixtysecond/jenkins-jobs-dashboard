@@ -13,8 +13,10 @@
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     //TODO: parse data
-                    document.getElementById("result").innerHTML =
-                            xmlhttp.responseText;
+//                    document.getElementById("result").innerHTML =
+//                            xmlhttp.responseText;
+                    var responses = JSON.parse(xmlhttp.responseText);
+                    processResponses(responses);
                 }
             }
 
@@ -25,27 +27,166 @@
             xmlhttp.send(jobQuery.value);
 
         }
+
+        function processResponses(responses) {
+            document.getElementById('rawJson').value = JSON.stringify(responses, null, '\t');
+            var pipelines = transformResponsesToPipelines(responses);
+            document.getElementById('transformedJson').value = JSON.stringify(pipelines, null, '\t');
+            //renderDashboard(pipelines);
+        }
+
+        function renderDashboard(pipelines) {
+
+        }
+
+        function transformResponsesToPipelines(responses) {
+            var pipelines = [];
+            for (var idxPipeline = 0; idxPipeline < responses.length; idxPipeline++) {
+                var pipeline = {};
+
+                var response = responses[idxPipeline];
+                //alert('response' + response);
+
+                pipeline.jenkinsServerUrl = response['jenkinsServerUrl'];
+                pipeline.jobNamePattern = response['jobNamePattern'];
+
+                var responseJobs = response['jobs'];
+                //alert('responseJobs' + responseJobs);
+
+                var responseLastBuilds = response['lastBuilds'];
+                //alert('responseLastBuilds' + responseLastBuilds);
+
+                var responseJobKeys = Object.keys(responseJobs);
+
+                pipeline.jobs = [];
+                for (var idxJob = 0; idxJob < responseJobKeys.length; idxJob++) {
+                    var job = {};
+
+                    job.name = responseJobKeys[idxJob];
+                    job.url = responseJobs[job.name]['url'];
+                    job.statusCode = responseLastBuilds[job.name]['statusCode'];
+                    var lastBuild = responseLastBuilds[job.name]['lastBuild'];
+
+                    if (lastBuild) {
+                        //alert('lastBuild='+JSON.stringify(lastBuild));
+
+                        job.lastBuildUrl = lastBuild['url'];
+
+                        if (job.lastBuildUrl) {
+                            job.lastBuildConsoleUrl = job.lastBuildUrl + "console";
+                        }
+
+
+                        job.duration = lastBuild['duration'];
+                        job.duration_minutes = (job.duration / 1000 / 60).toFixed(1);
+                        job.timestamp = lastBuild['timestamp'];
+
+                        job.nowMillis = new Date().getTime();
+                        job.millisSinceBuild = job.nowMillis - job.timestamp;
+                        job.age_days = (job.millisSinceBuild / 1000 / 60 / 60 / 24).toFixed(1);
+                        job.result = lastBuild['result'];
+                        var lastBuildActions = lastBuild['actions'];
+
+                        //alert('lastBuildActions='+JSON.stringify(lastBuildActions));
+
+
+                        job.start = new Date(job.timestamp);
+                        job.end = new Date(job.timestamp + job.duration);
+                        job.building = lastBuild['building'];
+
+
+                        for (var idxAction = 0; idxAction < lastBuildActions.length; idxAction++) {
+                            var lastBuildAction = lastBuildActions[idxAction];
+                            var actionKeys = Object.keys(lastBuildAction);
+
+                            if (actionKeys.indexOf('failCount') > -1) {
+                                job.failCount = lastBuildAction['failCount'];
+                            }
+
+                            if (actionKeys.indexOf('totalCount') > -1) {
+                                job.totalCount = lastBuildAction['totalCount'];
+                            }
+
+                            if (actionKeys.indexOf('skipCount') > -1) {
+                                job.skipCount = lastBuildAction['skipCount'];
+                            }
+
+                            if (actionKeys.indexOf('parameters') > -1) {
+                                var parametersArray = lastBuildAction['parameters']
+                                //alert(JSON.stringify(parametersArray));
+                                job.parameters = {};
+                                for (var idxParameter = 0; idxParameter < parametersArray.length; idxParameter++) {
+                                    var parameter = parametersArray[idxParameter];
+                                    //alert(JSON.stringify(parameter));
+                                    if (parameter['name']) {
+                                        job.parameters[parameter['name']] = parameter['value'];
+                                    }
+                                }
+                                //alert(JSON.stringify(job.parameters));
+                            }
+                        }
+                        if (job.totalCount) {
+                            job.successCount = job.totalCount - job.failCount - job.skipCount;
+                        }
+                    }
+                    if (job.result) {
+                        job.status = job.result;
+                    }
+                    else {
+                        job.status = job.statusCode;
+                    }
+
+                    pipeline.jobs.push(job);
+                }
+                pipelines.push(pipeline);
+            }
+            return pipelines;
+        }
     </script>
 </head>
-<body>
+
 <h1>Jenkins Job Dashboard</h1>
+
+<h2>TODOS</h2>
+<ul>
+    <li>link to console output</li>
+    <li>display all action parameters</li>
+</ul>
+
+<h2>rendering todos</h2>
+<ul>
+    <li>status</li>
+    <li>test ( p: pass, f: fail, s: skip )</li>
+    <li>age(days)</li>
+    <li>duration(mins)</li>
+    <li>name/link</li>
+    <li>name yellow if building</li>
+</ul>
 
 
 <label for="jobQueryTop">Please submit a query payload</label>
 
 <div id="jobQueryTop"></div>
-<textarea id="jobQuery" name="jobQuery" rows="20" cols="100"></textarea>
+<textarea id="jobQuery" name="jobQuery" rows="20" cols="150"></textarea>
 <br>
 <button onclick="postJobQuery()">Submit</button>
 
-<div id="result" name="result"></div>
+<label for="rawJsonTop">Please submit a query payload</label>
+
+<div id="rawJsonTop"></div>
+<textarea readonly id="rawJson" name="rawJson" rows="20" cols="150"></textarea>
+
+<label for="transformedJsonTop">Please submit a query payload</label>
+
+<div id="transformedJsonTop"></div>
+<textarea readonly id="transformedJson" name="transformedJson" rows="20" cols="150"></textarea>
 
 <h2>sample payload #1:</h2>
 <pre>
 [
     {
         "jenkinsServerUrl" : "https://builds.apache.org"
-        ,"jobNamePattern" : "Accumulo-1.7"
+        ,"jobNamePattern" : "ActiveMQ.*?"
     }
 ]
 </pre>

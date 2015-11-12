@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script type="text/javascript">
+        function foo() {
+            var def = {};
+            def.prop1 = 'prop1';
+            alert(def.prop1  == null); //false
+            alert(def.prop1  === null); //false
+            alert(def.prop2  == null);//true
+            alert(def.prop2  === null);//false
+
+        }
+
+        function foo2() {
+            var def = {};
+            def.prop1 = 'prop1';
+            alert(def.prop1  != null); //true
+            alert(def.prop1  !== null); //true
+            alert(def.prop1  != null);//true
+            alert(def.prop2  !== null);//true
+            alert(!def.prop2);//true
+            alert(!def.prop2);//true
+        }
+
+        function foo3() {
+            var def = {};
+            def.prop1 = null;
+            alert(def.prop1  != null); //false
+            alert( def.prop1 !== null); //false
+            alert(def.prop2  != null);//false
+            alert(def.prop2  !== null);//true
+            alert(!def.prop1);//true
+            alert(!def.prop2);//true
+        }
+    </script>
+</head>
+<body onload="foo3()">
+
+</body>
+</html>

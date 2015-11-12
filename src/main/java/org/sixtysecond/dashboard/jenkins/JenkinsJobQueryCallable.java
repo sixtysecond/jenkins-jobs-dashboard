@@ -70,6 +70,14 @@ public class JenkinsJobQueryCallable implements Callable<JSONObject> {
                 .get(jobsUrl)
                 .andReturn();
 
+        if (response.getStatusCode() != 200) {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("statusCode", response.getStatusCode());
+            jsonObject.put("body", response.getBody());
+            Map<String,JSONObject> ret = new HashMap<String,JSONObject>();
+            ret.put(jobsUrl, jsonObject);
+            return ret;
+        }
         assertThat(response.getStatusCode(), is(200));
         //        System.out.println("jobsResponse="+response.asString());
 
