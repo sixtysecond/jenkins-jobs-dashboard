@@ -1,6 +1,154 @@
 <html>
 <head>
+    <style type="text/css">
+
+        body {
+            /*white-space: nowrap*/
+            margin: 0 auto;
+            padding: 0;
+            display: inline-block;
+            font-family: Arial, Helvetica;
+            font-size: .9em;
+            vertical-align: top;
+        }
+
+        a {
+            color: #139;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #551a8b;
+        }
+
+        a:hover {
+            color: #06e;
+            text-decoration: underline;
+        }
+
+        /*fieldset {*/
+        /*/!*width: 10px;*!/*/
+        /**/
+        /*margin: 0px auto;*/
+        /*padding: 0px;*/
+        /*}*/
+
+        fieldset {
+            display: inline-block;
+            /*margin:20px;*/
+            /*padding:0 5px 5px;*/
+            border: 1px solid #666;
+            border-radius: 5px;
+            box-shadow: 0 0 2px #666;
+            margin: 0 auto;
+            padding: 0;
+            padding-left: 2px;
+            padding-right: 2px;
+            /*padding-top:10px;*/
+        }
+
+        legend {
+            /*padding:2px 4px;*/
+            background: #fff; /* For better legibility against the box-shadow */
+            border: 1px solid black;
+            margin: 0 auto;
+            padding: 0;
+            border-radius: 2px;
+            box-shadow: 0 0 2px #666;
+            /*border-radius:5px;*/
+        }
+
+        .dashboard {
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 0 0 2px #666;
+            vertical-align: top;
+            /*width: 10px;*/
+        }
+
+        .pipeline {
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            background-color: #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 2px #666;
+            display: inline-block;
+            /*width: 400px;*/
+            vertical-align: top;
+        }
+
+        .pipeline_property {
+            /*width: 10px;*/
+        }
+
+        .jobs {
+            /*padding: 5px;*/
+            background-color: #ddd;
+
+        }
+
+        .job {
+            border: 1px solid black;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 2px #666;
+            /*margin-bottom: 5px;*/
+        }
+
+        .job_property {
+
+            /*border: .5px solid black;*/
+            padding: 5px;
+            /*margin-left: 2px;*/
+            /*margin-right: 2px;*/
+        }
+
+        .job_section {
+            display: inline-block;
+            padding: 0;
+            padding-left: 4px;
+            /*width:90px;*/
+        }
+
+        .status_section {
+            /*width: 200px;*/
+        }
+
+        .status_success {
+            color: green;
+        }
+
+        .status_failure {
+            color: red;
+            background-color: #443;
+        }
+
+        .status_skip {
+            color: yellow;
+            background-color: #f8f8f8;
+        }
+
+        .status_unknown {
+            color: orange;
+            background-color: #887;
+        }
+
+        .status_success {
+            color: green;
+            background-color: #fff;
+        }
+
+        .tiny {
+            font-size: .7em;
+        }
+
+    </style>
+
     <script type="text/javascript">
+
+        /***** transform *****/
+
         function postJobQuery() {
 
             var xmlhttp;
@@ -16,7 +164,8 @@
 //                    document.getElementById("result").innerHTML =
 //                            xmlhttp.responseText;
                     var responses = JSON.parse(xmlhttp.responseText);
-                    processResponses(responses);
+                    var pipelines = processResponses(responses);
+                    renderDashboard(pipelines);
                 }
             }
 
@@ -32,11 +181,7 @@
             document.getElementById('rawJson').value = JSON.stringify(responses, null, '\t');
             var pipelines = transformResponsesToPipelines(responses);
             document.getElementById('transformedJson').value = JSON.stringify(pipelines, null, '\t');
-            //renderDashboard(pipelines);
-        }
-
-        function renderDashboard(pipelines) {
-
+            return pipelines;
         }
 
         function transformResponsesToPipelines(responses) {
@@ -45,20 +190,18 @@
                 var pipeline = {};
 
                 var response = responses[idxPipeline];
-                //alert('response' + response);
 
                 pipeline.jenkinsServerUrl = response['jenkinsServerUrl'];
                 pipeline.jobNamePattern = response['jobNamePattern'];
 
                 var responseJobs = response['jobs'];
-                //alert('responseJobs' + responseJobs);
 
                 var responseLastBuilds = response['lastBuilds'];
-                //alert('responseLastBuilds' + responseLastBuilds);
 
                 var responseJobKeys = Object.keys(responseJobs);
 
-                pipeline.jobs = [];
+
+                var jobs = [];
                 for (var idxJob = 0; idxJob < responseJobKeys.length; idxJob++) {
                     var job = {};
 
@@ -68,7 +211,6 @@
                     var lastBuild = responseLastBuilds[job.name]['lastBuild'];
 
                     if (lastBuild) {
-                        //alert('lastBuild='+JSON.stringify(lastBuild));
 
                         job.lastBuildUrl = lastBuild['url'];
 
@@ -86,8 +228,6 @@
                         job.age_days = (job.millisSinceBuild / 1000 / 60 / 60 / 24).toFixed(1);
                         job.result = lastBuild['result'];
                         var lastBuildActions = lastBuild['actions'];
-
-                        //alert('lastBuildActions='+JSON.stringify(lastBuildActions));
 
 
                         job.start = new Date(job.timestamp);
@@ -113,16 +253,15 @@
 
                             if (actionKeys.indexOf('parameters') > -1) {
                                 var parametersArray = lastBuildAction['parameters']
-                                //alert(JSON.stringify(parametersArray));
+
                                 job.parameters = {};
                                 for (var idxParameter = 0; idxParameter < parametersArray.length; idxParameter++) {
                                     var parameter = parametersArray[idxParameter];
-                                    //alert(JSON.stringify(parameter));
+
                                     if (parameter['name']) {
                                         job.parameters[parameter['name']] = parameter['value'];
                                     }
                                 }
-                                //alert(JSON.stringify(job.parameters));
                             }
                         }
                         if (job.totalCount) {
@@ -136,24 +275,211 @@
                         job.status = job.statusCode;
                     }
 
-                    pipeline.jobs.push(job);
+                    jobs.push(job);
                 }
+
+                var sortedJobs = sortJobsByTimeStamp(jobs);
+                pipeline.jobs = sortedJobs;
+                //pipeline.jobs = jobs;
                 pipelines.push(pipeline);
             }
             return pipelines;
         }
+
+        function sortJobsByTimeStamp(unsortedJobs) {
+
+            var jobTimeStampMap = {};
+            for (var idxJob = 0; idxJob < unsortedJobs.length; idxJob++) {
+
+                var job = unsortedJobs[idxJob];
+                var jobName = job['name'];
+                var timestamp = job['timestamp'];
+                if (!timestamp) {
+                    timestamp = '0000';
+                }
+                var key = timestamp + '-' + jobName;
+                jobTimeStampMap[key] = job;
+            }
+            var sortedJobs = [];
+            var keysUnsorted = Object.keys(jobTimeStampMap);
+            var keysSorted = keysUnsorted.sort().reverse();
+
+            for (var idxKey = 0; idxKey < keysSorted.length; idxKey++) {
+                var key = keysSorted[idxKey];
+                sortedJobs.push(jobTimeStampMap[key]);
+            }
+
+            return sortedJobs;
+
+        }
+        /***** render *****/
+
+        function pipelineToTable(pipeline) {
+            var pipelineHtml = '<div class="pipeline"><tr><td>';
+
+            pipelineHtml += '<div class="pipeline_property">pattern: ' + pipeline.jobNamePattern.toString() + '</div>';
+            pipelineHtml += '<div class="pipeline_property">server: ' + pipeline.jenkinsServerUrl.toString() + '</div>';
+
+
+            if (pipeline.jobs) {
+
+                pipelineHtml += '<fieldset class="jobs"><legend>jobs:</legend>';
+
+                for (var idxJob = 0; idxJob < pipeline.jobs.length; idxJob++) {
+                    pipelineHtml += '<div class="job">';
+                    var job = pipeline.jobs[idxJob];
+
+                    pipelineHtml += '<div class="job_property">';
+                    pipelineHtml += '<a href="' + job.lastBuildUrl + '" target="_blank">' + job.name.toString() + '</a>';
+
+                    pipelineHtml += '<span class="job_property">';
+                    pipelineHtml += ' <a href="' + job.lastBuildConsoleUrl + '" target="_blank">console</a>';
+                    pipelineHtml += '</span>';
+                    pipelineHtml += '</div>';
+                    pipelineHtml += '<div>';
+                    if (job.parameters) {
+                        pipelineHtml += '<span class="tiny job_property">' + (JSON.stringify(job.parameters)).replace(/\"/g, "");
+                        pipelineHtml += '</span>';
+                    }
+
+                    pipelineHtml += '</div>';
+
+
+                    var statusClass = getStatusClass(job.status);
+                    pipelineHtml += '<div class="status_section job_section ">';//75px
+                    pipelineHtml += '<fieldset class="job_section ' + statusClass + '">';
+                    pipelineHtml += job.status.toString();
+                    pipelineHtml += '</fieldset>';
+                    pipelineHtml += '</div>';
+
+                    pipelineHtml += '<div class="age_section job_section" >';
+                    pipelineHtml += '<fieldset>';
+                    pipelineHtml += 'age:&nbsp;' + job.age_days;
+                    pipelineHtml += '&nbsp;days</fieldset>';
+                    pipelineHtml += '</div>';
+
+                    pipelineHtml += '<div class="duration_section job_section">'; //80px
+                    pipelineHtml += '<fieldset class="job_section">';
+                    pipelineHtml += 'run:&nbsp;' + job.duration_minutes + ' min';
+                    pipelineHtml += '</fieldset>';
+                    pipelineHtml += '</div>';
+
+
+                    if (job.totalCount) {
+                        pipelineHtml += '<fieldset class="job_section">';
+
+                        //success
+                        if (!job.successCount) {
+                            job.successCount = '-';
+                        }
+                        var successClass = ''
+                        if (job.successCount > 0) {
+                            successClass = "status_success";
+                        }
+                        pipelineHtml += ' pass:<fieldset class="' + successClass + '">' + job.successCount + '</fieldset>';
+
+                        //failure
+                        if (!job.failCount) {
+                            job.failCount = '-';
+                        }
+                        var failureClass = ''
+                        if (job.failCount > 0) {
+                            failureClass = "status_failure";
+                        }
+                        pipelineHtml += ' fail:<fieldset class="' + failureClass + '">' + job.failCount + '</fieldset>';
+
+                        //skip
+                        if (!job.skipCount) {
+                            job.skipCount = '-';
+                        }
+                        var skipClass = ''
+                        if (job.skipCount > 0) {
+                            skipCount = "status_skip";
+                        }
+                        pipelineHtml += ' skip:<fieldset class="' + skipClass + '">' + job.skipCount + '</fieldset>';
+
+                        //total
+                        if (!job.totalCount) {
+                            job.totalCount = '-';
+                        }
+                        var totalClass = ''
+                        if (job.totalCount > 0) {
+                            totalCount = "status_total";
+                        }
+                        pipelineHtml += ' tot:<fieldset class="' + totalClass + '">' + job.totalCount + '</fieldset>';
+
+                        pipelineHtml += '</fieldset> <!-- end job_section -->';
+
+                    }
+
+
+                    pipelineHtml += '</div><!--end job div-->';
+                }
+                pipelineHtml += '</fieldset>';
+            }
+            pipelineHtml += '</div><!--end pipeline div-->';
+            return pipelineHtml;
+        }
+
+        function getStatusClass(status) {
+            if (!status) {
+                return '';
+            }
+
+            status = status.toString().toLowerCase();
+            if (status == 'success') {
+                return 'status_success';
+            }
+            else if (status == 'failure') {
+                return 'status_failure';
+            }
+            return 'status_unknown';
+        }
+        function pipelinesToHtml(pipelines) {
+
+
+            var dashboard = '';
+            dashboard += '<div style="display:inline-block"><button onclick="postJobQuery()" style="display:inline-block">refresh</button></div>';
+            dashboard += '<div class="dashboard" id="dashboard" name="dashboard">';
+
+
+            for (var idxPipeline = 0; idxPipeline < pipelines.length; idxPipeline++) {
+                var pipeline = pipelines[idxPipeline];
+                var pipelineHtml = pipelineToTable(pipeline);
+                dashboard += pipelineHtml;
+            }
+
+            dashboard += '</div><!--end dashboard div -->';
+
+            return dashboard;
+
+        }
+
+        function renderDashboard(pipelines) {
+            document.getElementById('dashboard').innerHTML = pipelinesToHtml(pipelines);
+        }
+
     </script>
 </head>
-
+<div id="dashboard" name="dashboard"></div>
 <h1>Jenkins Job Dashboard</h1>
 
 <h2>TODOS</h2>
+<>
+<li>link to console output</li>
+<li>display all action parameters</li>
+<li>support map or url in json request which would be displayed as part of pipeline on top</li>
+<li>cli param when startup for json default</li>
+<li>cli param for port</li>
+<li>refresh button</li>
+<li>last udpated timestamp</li>
+</ul>
+
+<h2>paralellization todos</h2>
 <ul>
-    <li>link to console output</li>
-    <li>display all action parameters</li>
-    <li>support map or url in json request which would be displayed as part of pipeline on top</li>
-    <li>cli param when startup for json default</li>
-    <li>cli param for port</li>
+    <li>do separate ajax call for each query with independent update</li>
+    <li>maintain internal map model so can refresh view after each ajax call?</li>
+
 </ul>
 
 <h2>rendering todos</h2>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type ="text/javascript">
+
+        var jobs = [
+            {
+                "name": "abc",
+                "timestamp": 123
+            },
+
+            {
+                "name": "aaa",
+                "timestamp": 9999
+            },
+
+            {
+                "name": "zzz",
+                "timestamp": 0000
+            },
+            {
+                "name": "zzz",
+                "timestamp": 5555
+            },
+            {
+                "name": "def",
+                "timestamp": 456
+            }
+        ]
+
+        var jobs2 =
+                [
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-deploy-generic",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-generic/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-generic/26/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-generic/26/console",
+                        "duration":1651522,
+                        "duration_minutes":"27.5",
+                        "timestamp":1417165715000,
+                        "nowMillis":1447367873462,
+                        "millisSinceBuild":30202158462,
+                        "age_days":"349.6",
+                        "result":"FAILURE",
+                        "start":"2014-11-28T09:08:35.000Z",
+                        "end":"2014-11-28T09:36:06.522Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"LATEST",
+                            "Env":"ci2"
+                        },
+                        "status":"FAILURE"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-release",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-release/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-release/720/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-release/720/console",
+                        "duration":746809,
+                        "duration_minutes":"12.4",
+                        "timestamp":1447295686000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":72187463,
+                        "age_days":"0.8",
+                        "result":"SUCCESS",
+                        "start":"2015-11-12T02:34:46.000Z",
+                        "end":"2015-11-12T02:47:12.809Z",
+                        "building":false,
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-secondary",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-secondary/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-secondary/293/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-secondary/293/console",
+                        "duration":684659,
+                        "duration_minutes":"11.4",
+                        "timestamp":1447302793000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":65080463,
+                        "age_days":"0.8",
+                        "result":"FAILURE",
+                        "start":"2015-11-12T04:33:13.000Z",
+                        "end":"2015-11-12T04:44:37.659Z",
+                        "building":false,
+                        "failCount":0,
+                        "totalCount":1616,
+                        "skipCount":0,
+                        "successCount":1616,
+                        "status":"FAILURE"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-smoke-qa1",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-smoke-qa1/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-smoke-qa1/15/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-smoke-qa1/15/console",
+                        "duration":31314,
+                        "duration_minutes":"0.5",
+                        "timestamp":1435264110000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":12103763463,
+                        "age_days":"140.1",
+                        "result":"SUCCESS",
+                        "start":"2015-06-25T20:28:30.000Z",
+                        "end":"2015-06-25T20:29:01.314Z",
+                        "building":false,
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-commit",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-commit/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-commit/982/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-commit/982/console",
+                        "duration":502439,
+                        "duration_minutes":"8.4",
+                        "timestamp":1447295173905,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":72699558,
+                        "age_days":"0.8",
+                        "result":"SUCCESS",
+                        "start":"2015-11-12T02:26:13.905Z",
+                        "end":"2015-11-12T02:34:36.344Z",
+                        "building":false,
+                        "failCount":0,
+                        "totalCount":808,
+                        "skipCount":0,
+                        "successCount":808,
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-tests-qdcptc",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-tests-qdcptc/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-tests-qdcptc/220/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-tests-qdcptc/220/console",
+                        "duration":45736,
+                        "duration_minutes":"0.8",
+                        "timestamp":1447285054000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":82819463,
+                        "age_days":"1.0",
+                        "result":"SUCCESS",
+                        "start":"2015-11-11T23:37:34.000Z",
+                        "end":"2015-11-11T23:38:19.736Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.670",
+                            "StagingRepoId":"payments-4530"
+                        },
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-fortify",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-fortify/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-fortify/87/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-fortify/87/console",
+                        "duration":1222873,
+                        "duration_minutes":"20.4",
+                        "timestamp":1446965161000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":402712463,
+                        "age_days":"4.7",
+                        "result":"SUCCESS",
+                        "start":"2015-11-08T06:46:01.000Z",
+                        "end":"2015-11-08T07:06:23.873Z",
+                        "building":false,
+                        "failCount":0,
+                        "totalCount":0,
+                        "skipCount":0,
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-promote",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-promote/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-promote/16/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-promote/16/console",
+                        "duration":32647,
+                        "duration_minutes":"0.5",
+                        "timestamp":1445361139000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":2006734463,
+                        "age_days":"23.2",
+                        "result":"SUCCESS",
+                        "start":"2015-10-20T17:12:19.000Z",
+                        "end":"2015-10-20T17:12:51.647Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.652",
+                            "StagingRepoId":"payments-4184"
+                        },
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-regression-qdcqa1",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-regression-qdcqa1/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-regression-qdcqa1/476/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-regression-qdcqa1/476/console",
+                        "duration":405037,
+                        "duration_minutes":"6.8",
+                        "timestamp":1447297564000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":70309463,
+                        "age_days":"0.8",
+                        "result":"UNSTABLE",
+                        "start":"2015-11-12T03:06:04.000Z",
+                        "end":"2015-11-12T03:12:49.037Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.671",
+                            "StagingRepoId":"payments-4538"
+                        },
+                        "failCount":1,
+                        "totalCount":841,
+                        "skipCount":3,
+                        "successCount":837,
+                        "status":"UNSTABLE"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-deploy-qdcci2",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcci2/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcci2/787/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcci2/787/console",
+                        "duration":117679,
+                        "duration_minutes":"2.0",
+                        "timestamp":1447296442000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":71431463,
+                        "age_days":"0.8",
+                        "result":"SUCCESS",
+                        "start":"2015-11-12T02:47:22.000Z",
+                        "end":"2015-11-12T02:49:19.679Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.671",
+                            "StagingRepoId":"payments-4538"
+                        },
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-bat-qdcci2",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-bat-qdcci2/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-bat-qdcci2/681/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-bat-qdcci2/681/console",
+                        "duration":858705,
+                        "duration_minutes":"14.3",
+                        "timestamp":1447296567000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":71306463,
+                        "age_days":"0.8",
+                        "result":"SUCCESS",
+                        "start":"2015-11-12T02:49:27.000Z",
+                        "end":"2015-11-12T03:03:45.705Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.671",
+                            "StagingRepoId":"payments-4538"
+                        },
+                        "failCount":0,
+                        "totalCount":839,
+                        "skipCount":1,
+                        "successCount":838,
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-deploy-qdcptc",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcptc/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcptc/220/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcptc/220/console",
+                        "duration":121695,
+                        "duration_minutes":"2.0",
+                        "timestamp":1447284923000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":82950463,
+                        "age_days":"1.0",
+                        "result":"SUCCESS",
+                        "start":"2015-11-11T23:35:23.000Z",
+                        "end":"2015-11-11T23:37:24.695Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.670",
+                            "StagingRepoId":"payments-4530"
+                        },
+                        "status":"SUCCESS"
+                    },
+                    {
+                        "name":"platform-tlc-risk-analysis-bp-main-deploy-qdcqa1",
+                        "url":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcqa1/",
+                        "statusCode":200,
+                        "lastBuildUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcqa1/443/",
+                        "lastBuildConsoleUrl":"https://jenkins2.payments.intuit.com/jenkins/job/platform-tlc-risk-analysis-bp-main-deploy-qdcqa1/443/console",
+                        "duration":122111,
+                        "duration_minutes":"2.0",
+                        "timestamp":1447297434000,
+                        "nowMillis":1447367873463,
+                        "millisSinceBuild":70439463,
+                        "age_days":"0.8",
+                        "result":"SUCCESS",
+                        "start":"2015-11-12T03:03:54.000Z",
+                        "end":"2015-11-12T03:05:56.111Z",
+                        "building":false,
+                        "parameters":{
+                            "Version":"1.0.671",
+                            "StagingRepoId":"payments-4538"
+                        },
+                        "status":"SUCCESS"
+                    }
+                ];
+
+        function sortJobsByTimeStamp( unsortedJobs ) {
+//            alert(JSON.stringify(unsortedJobs));
+            var jobTimeStampMap = {};
+            for (var idxJob=0;idxJob<unsortedJobs.length;idxJob++){
+
+                var job = unsortedJobs[idxJob];
+                var jobName = job['name'];
+                var timestamp = job['timestamp'];
+                if (!timestamp) {
+                    timestamp = '0000';
+                }
+                var key = timestamp + '-' + jobName;
+                jobTimeStampMap[key] = job;
+            }
+            //alert('jobTimeStampMap='+JSON.stringify(jobTimeStampMap));
+            var sortedJobs = [];
+            var keysUnsorted = Object.keys(jobTimeStampMap);
+            //var keysSorted = keysUnsorted.sort(function(a,b){return a - b});
+            var keysSorted = keysUnsorted.sort().reverse();
+
+            alert('keysUnsorted='+JSON.stringify(keysUnsorted));
+            alert('keysSorted='+JSON.stringify(keysSorted));
+
+            for ( var idxKey=0;idxKey < keysSorted.length;idxKey++) {
+//                alert('key='+ key);
+//                alert('job='+ jobTimeStampMap[key]);
+                var key = keysSorted[idxKey];
+                sortedJobs.push(jobTimeStampMap[key]);
+            }
+
+            return sortedJobs;
+
+        }
+
+        function sort(jobs) {
+            document.getElementById('unsortedJobs').innerHTML = JSON.stringify(jobs, null, '\t');
+            var sortedJobs = sortJobsByTimeStamp(jobs);
+            document.getElementById('sortedJobs').innerHTML = JSON.stringify(sortedJobs, null, '\t');
+        }
+    </script>
+</head>
+<body>
+<button onclick="sort(jobs)">Render</button>
+<h1>unsorted</h1>
+<div id="unsortedJobs">unsortedJobs</div>
+<h1>sorted</h1>
+<div id="sortedJobs">sortedJobs</div>
+</body>
+</html>
