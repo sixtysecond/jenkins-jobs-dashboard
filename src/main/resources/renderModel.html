@@ -508,7 +508,7 @@
                         if (job.successCount > 0) {
                             successClass = "status_success";
                         }
-                        pipelineHtml += ' p:<fieldset class="' + successClass + '">' + job.successCount + '</fieldset>';
+                        pipelineHtml += ' pass:<fieldset class="' + successClass + '">' + job.successCount + '</fieldset>';
 
                         //failure
                         if (!job.failCount) {
@@ -518,7 +518,7 @@
                         if (job.failCount > 0) {
                             failureClass = "status_failure";
                         }
-                        pipelineHtml += ' f:<fieldset class="' + failureClass + '">' + job.failCount + '</fieldset>';
+                        pipelineHtml += ' fail:<fieldset class="' + failureClass + '">' + job.failCount + '</fieldset>';
 
                         //skip
                         if (!job.skipCount) {
@@ -528,7 +528,7 @@
                         if (job.skipCount > 0) {
                             skipCount = "status_skip";
                         }
-                        pipelineHtml += ' s:<fieldset class="' + skipClass + '">' + job.skipCount + '</fieldset>';
+                        pipelineHtml += ' skip:<fieldset class="' + skipClass + '">' + job.skipCount + '</fieldset>';
 
                         //total
                         if (!job.totalCount) {
@@ -538,7 +538,7 @@
                         if (job.totalCount > 0) {
                             totalCount = "status_total";
                         }
-                        pipelineHtml += ' t:<fieldset class="' + totalClass + '">' + job.totalCount + '</fieldset>';
+                        pipelineHtml += ' tot:<fieldset class="' + totalClass + '">' + job.totalCount + '</fieldset>';
 
                         pipelineHtml += '</fieldset> <!-- end job_section -->';
 
