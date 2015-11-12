@@ -10,13 +10,16 @@
             /*white-space: nowrap*/
             margin: 0 auto;
             padding: 0;
-            display: inline;
+            display: inline-block;
+            font-family: Arial, Helvetica;
+            font-size: .8em;
         }
 
         fieldset {
             /*width: 10px;*/
-            margin: 1px auto;
-            padding: 2px;
+            display: inline-block;
+            margin: 0px auto;
+            padding: 0px;
         }
 
         .dashboard {
@@ -29,6 +32,7 @@
             border: 1px solid black;
             margin: 5px;
             padding: 5px;
+            background-color: #ccc;
             /*width: 400px;*/
 
         }
@@ -37,13 +41,19 @@
             /*width: 10px;*/
         }
 
+        .jobs {
+            padding: 5px;
+            background-color: #eee;
+        }
+
         .job {
             border: 1px solid black;
+            background-color: #fff;
             /*margin-bottom: 5px;*/
         }
 
         .job_property {
-            border: .5px solid black;
+            /*border: .5px solid black;*/
             /*margin: 1px;*/
             /*margin-left: 2px;*/
             /*margin-right: 2px;*/
@@ -54,20 +64,35 @@
         }
 
         .status_section {
-           width: 200px;
+            /*width: 200px;*/
         }
-
 
         .status_success {
             color: green;
         }
 
         .status_failure {
-            color: green;
+            color: red;
+            background-color: #d0d0d0;
+        }
+
+        .status_skip {
+            color: yellow;
+            background-color: #f8f8f8;
         }
 
         .status_unknown {
             color: orange;
+            background-color: #f8f8f8;
+        }
+
+        .status_success {
+            color: black;
+            background-color: #fff;
+        }
+
+        .tiny {
+            font-size: .8em;
         }
 
     </style>
@@ -381,7 +406,7 @@
 
             if (pipeline.jobs) {
 
-                pipelineHtml += '<fieldset><legend>jobs:</legend>';
+                pipelineHtml += '<fieldset class="jobs"><legend>jobs:</legend>';
                 //alert('hasjobs');
                 for (var idxJob = 0; idxJob < pipeline.jobs.length; idxJob++) {
                     pipelineHtml += '<div class="job">';
@@ -391,22 +416,89 @@
 
 
                     var statusClass = getStatusClass(job.status);
-                    pipelineHtml += '<fieldset class="job_section"><legend>status</legend>'
+                    pipelineHtml += '<div style="display:inline-block;width:75px;">';
+                    pipelineHtml += '<fieldset class="job_section">';
                     pipelineHtml += '<span class=" job_property ' + statusClass + '">' + job.status.toString() + '</span>';
-                    pipelineHtml += '</fieldset>'
+                    pipelineHtml += '</fieldset>';
+                    pipelineHtml += '</div>';
 
-                    pipelineHtml += '<fieldset class="job_section"><legend>age (day)</legend>'
-                    pipelineHtml += '<span class="job_property">' + job.age_days + '</span>';
-                    pipelineHtml += '</fieldset>'
+                    pipelineHtml += '<div style="display:inline-block;width:80px;">';
+                    pipelineHtml += '<fieldset class="job_section">';
+                    pipelineHtml += '<span class="job_property">age:&nbsp;' + job.age_days + ' d</span>';
+                    pipelineHtml += '</fieldset>';
+                    pipelineHtml += '</div>';
 
-                    pipelineHtml += '<fieldset class="job_section"><legend>run (mi)</legend>'
-                    pipelineHtml += '<span class="job_property">' + job.duration_minutes + '</span>';
-                    pipelineHtml += '</fieldset>'
+                    pipelineHtml += '<div style="display:inline-block;width:80px;">';
+                    pipelineHtml += '<fieldset class="job_section">';
+                    pipelineHtml += '<span class="job_property">run:&nbsp;' + job.duration_minutes + ' mi</span>';
+                    pipelineHtml += '</fieldset>';
+                    pipelineHtml += '</div>';
+
+                    pipelineHtml += '<div style="display:inline-block;width:100px;">';
+                    pipelineHtml += '<fieldset class="job_section">';
+
+                    pipelineHtml += '<fieldset class="job_property">';
+                    pipelineHtml += '<a href="' + job.url + '">job</a>';
+                    pipelineHtml += '</fieldset>';
+
+                    pipelineHtml += '<fieldset class="job_property">';
+                    pipelineHtml += ' <a href="' + job.lastBuildUrl + '">last</a>';
+                    pipelineHtml += '</fieldset>';
+
+                    pipelineHtml += '<fieldset class="job_property">';
+                    pipelineHtml += ' <a href="' + job.lastBuildConsoleUrl + '">console</a>';
+                    pipelineHtml += '</fieldset>';
+
+                    pipelineHtml += '</fieldset>';
+                    pipelineHtml += '</div>';
 
 
-                    pipelineHtml += '<fieldset class="job_section"><legend>parameters</legend>'
-                    pipelineHtml += '<span class="job_property">parameters: ' + job.parameters + '</span>';
-                    pipelineHtml += '</fieldset>'
+                    if (job.totalCount) {
+                        pipelineHtml += '<fieldset class="job_section">';
+
+                        //success
+                        if (!job.successCount) {
+                            job.successCount = '-';
+                        }
+                        var successClass = ''
+                        if (job.successCount > 0) {
+                            successClass = "status_success";
+                        }
+                        pipelineHtml += ' p:<fieldset class="' + successClass + '">' + job.successCount + '</fieldset>';
+
+                        //failure
+                        if (!job.failCount) {
+                            job.failCount = '-';
+                        }
+                        var failureClass = ''
+                        if (job.failCount > 0) {
+                            failureClass = "status_failure";
+                        }
+                        pipelineHtml += ' f:<fieldset class="' + failureClass + '">' + job.failCount + '</fieldset>';
+
+                        //skip
+                        if (!job.skipCount) {
+                            job.skipCount = '-';
+                        }
+                        var skipClass = ''
+                        if (job.skipCount > 0) {
+                            skipCount = "status_skip";
+                        }
+                        pipelineHtml += ' s:<fieldset class="' + skipClass + '">' + job.skipCount + '</fieldset>';
+
+                        //total
+                        if (!job.totalCount) {
+                            job.totalCount = '-';
+                        }
+                        var totalClass = ''
+                        if (job.totalCount > 0) {
+                            totalCount = "status_total";
+                        }
+                        pipelineHtml += ' t:<fieldset class="' + totalClass + '">' + job.totalCount + '</fieldset>';
+
+                        pipelineHtml += '</fieldset> <!-- end job_section -->';
+
+                    }
 
                     pipelineHtml += '</div><!--end job div-->';
                 }
@@ -434,7 +526,7 @@
 
             //alert(JSON.stringify(pipelines));
 
-            var dashBoard = '<div class="dashboard" id="dashboard" name="dashboard" style="border: 1px solid">';
+            var dashboard = '<div class="dashboard" id="dashboard" name="dashboard" style="border: 1px solid">';
 
             //alert(pipelines.length);
             for (var idxPipeline = 0; idxPipeline < pipelines.length; idxPipeline++) {
@@ -453,13 +545,14 @@
         }
 
         function renderDashboard(pipelines) {
-            //alert(JSON.stringify(pipelines));
             document.getElementById('dashboard').innerHTML = pipelinesToHtml(pipelines);
         }
     </script>
 </head>
 <body>
 <button onclick="renderDashboard(pipelines)">Render</button>
-<div id="dashboard" name="dashboard"></div>
+before
+<div id="dashboard" name="dashboard">temp</div>
+after
 </body>
 </html>
