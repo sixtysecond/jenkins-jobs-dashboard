@@ -42,7 +42,7 @@
             box-shadow: 0 0 2px #666;
             margin: 0 auto;
             padding: 0;
-            padding-left: 2px;
+            padding-left: 5px;
             padding-right: 2px;
             /*padding-top:10px;*/
         }
@@ -52,7 +52,7 @@
             background: #fff; /* For better legibility against the box-shadow */
             border: 1px solid black;
             margin: 0 auto;
-            padding: 0;
+            /*padding: 0;*/
             border-radius: 2px;
             box-shadow: 0 0 2px #666;
             /*border-radius:5px;*/
@@ -93,21 +93,24 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 2px #666;
+            margin: 2px;
+            margin-bottom: 5px;
+            margin-top: 5px;
             /*margin-bottom: 5px;*/
         }
 
         .job_property {
 
             /*border: .5px solid black;*/
-            padding: 5px;
+
             /*margin-left: 2px;*/
             /*margin-right: 2px;*/
         }
 
         .job_section {
             display: inline-block;
-            padding: 0;
-            padding-left: 4px;
+            /*padding: 0;*/
+            /*padding-left: 4px;*/
             /*width:90px;*/
         }
 
@@ -365,7 +368,7 @@
                     pipelineHtml += '</div>';
 
 
-                    if (job.totalCount) {
+                    if (job.successCount) {
                         pipelineHtml += '<fieldset class="job_section">';
 
                         //success
@@ -398,15 +401,15 @@
                         }
                         pipelineHtml += ' skip:<fieldset class="' + skipClass + '">' + job.skipCount + '</fieldset>';
 
-                        //total
-                        if (!job.totalCount) {
-                            job.totalCount = '-';
-                        }
-                        var totalClass = ''
-                        if (job.totalCount > 0) {
-                            totalCount = "status_total";
-                        }
-                        pipelineHtml += ' tot:<fieldset class="' + totalClass + '">' + job.totalCount + '</fieldset>';
+//                        //total
+//                        if (!job.totalCount) {
+//                            job.totalCount = '-';
+//                        }
+//                        var totalClass = ''
+//                        if (job.totalCount > 0) {
+//                            totalCount = "status_total";
+//                        }
+//                        pipelineHtml += ' tot:<fieldset class="' + totalClass + '">' + job.totalCount + '</fieldset>';
 
                         pipelineHtml += '</fieldset> <!-- end job_section -->';
 
@@ -516,7 +519,16 @@
     {
         "jenkinsServerUrl" : "https://builds.apache.org"
         ,"jobNamePattern" : "ActiveMQ.*?"
+    },
+    {
+        "jenkinsServerUrl" : "https://builds.apache.org"
+        ,"jobNamePattern" : "Ambari.*?"
+    },
+    {
+        "jenkinsServerUrl" : "https://builds.apache.org"
+        ,"jobNamePattern" : "Accumulo.*?"
     }
+
 ]
 </pre>
 

@@ -1,7 +1,7 @@
 package com.example.helloworld;
 
-import com.example.helloworld.health.TemplateHealthCheck;
-import com.example.helloworld.resources.*;
+import com.example.helloworld.resources.IndexResource;
+import com.example.helloworld.resources.JenkinsJobQueryResource;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import io.dropwizard.Application;
@@ -31,21 +31,10 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
         environment.jersey().register(new JenkinsJobQueryResource());
         environment.getObjectMapper().setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 
-//        environment.getObjectMapper().setVisibilityChecker(mapper.getSerializationConfig().getDefaultVisibilityChecker()
-//                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
-//                .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
-//                .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
-//                .withCreatorVisibility(JsonAutoDetect.Visibility.NONE));
 
-        final HelloWorldResource resource = new HelloWorldResource(
-                configuration.getTemplate(),
-                configuration.getDefaultName()
-        );
-        environment.jersey().register(resource);
-
-        final TemplateHealthCheck healthCheck =
-                new TemplateHealthCheck(configuration.getTemplate());
-        environment.healthChecks().register("template", healthCheck);
+//        final TemplateHealthCheck healthCheck =
+//                new TemplateHealthCheck(configuration.getTemplate());
+//        environment.healthChecks().register("template", healthCheck);
 
 
 
