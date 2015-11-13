@@ -1,0 +1,2148 @@
+[
+  {
+    "jenkinsServerUrl": "https://builds.apache.org",
+    "jobNamePattern": "ActiveMQ.*?",
+    "lastBuilds": {
+      "ActiveMQ-openwire": {
+        "statusCode": 404
+      },
+      "ActiveMQ-Trunk-Deploy": {
+        "lastBuild": {
+          "queueId": 41730,
+          "displayName": "#1498",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Trunk-Deploy #1498",
+          "estimatedDuration": 820321,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Trunk-Deploy/1498/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-12 15:55:29 +0000",
+                "msg": "fixing unit test to dynamically use a free port",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+                  "fullName": "christopher.l.shannon"
+                },
+                "paths": [
+                  {
+                    "file": "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "fixing unit test to dynamically use a free port\n",
+                "commitId": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+                "id": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+                "affectedPaths": [
+                  "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java"
+                ],
+                "timestamp": -1
+              },
+              {
+                "date": "2015-11-12 16:51:29 -0500",
+                "msg": "https://issues.apache.org/jira/browse/AMQ-5957",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/tabish121",
+                  "fullName": "tabish121"
+                },
+                "paths": [
+                  {
+                    "file": "pom.xml",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "https://issues.apache.org/jira/browse/AMQ-5957\nUpdate HttpCore to 4.4.4\n",
+                "commitId": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                "id": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                "affectedPaths": [
+                  "pom.xml"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 829449,
+          "result": "SUCCESS",
+          "number": 1498,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+              "fullName": "christopher.l.shannon"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/tabish121",
+              "fullName": "tabish121"
+            }
+          ],
+          "executor": null,
+          "mavenVersionUsed": "3.0.4",
+          "builtOn": "ubuntu-4",
+          "id": "1498",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/trunk": {
+                  "marked": {
+                    "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+                    "branch": [
+                      {
+                        "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+                        "name": "origin/trunk"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 1224,
+                  "revision": {
+                    "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+                    "branch": [
+                      {
+                        "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+                        "name": "origin/trunk"
+                      }
+                    ]
+                  }
+                },
+                "origin/master": {
+                  "marked": {
+                    "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                    "branch": [
+                      {
+                        "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                        "name": "origin/master"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 1498,
+                  "revision": {
+                    "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                    "branch": [
+                      {
+                        "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                        "name": "origin/master"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                "branch": [
+                  {
+                    "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                    "name": "origin/master"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "https://git-wip-us.apache.org/repos/asf/activemq.git"
+              ]
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "scorecard": {
+                "scores": [
+                  {
+                    "description": "The build was successful",
+                    "ruleName": "Build result",
+                    "rulesetName": "Build result",
+                    "value": 1
+                  }
+                ],
+                "totalPoints": 1
+              },
+              "participants": [
+                {
+                  "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+                  "fullName": "christopher.l.shannon"
+                },
+                {
+                  "absoluteUrl": "https://builds.apache.org/user/tabish121",
+                  "fullName": "tabish121"
+                }
+              ]
+            }
+          ],
+          "artifacts": [],
+          "timestamp": 1447384347367
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Apollo": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#989",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Apollo #989",
+          "estimatedDuration": 878812,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Apollo/989/",
+          "changeSet": {
+            "kind": "svn",
+            "revisions": [
+              {
+                "module": "https://svn.apache.org/repos/asf/activemq/activemq-apollo/trunk",
+                "revision": 1513995
+              }
+            ],
+            "items": []
+          },
+          "duration": 878812,
+          "result": "UNSTABLE",
+          "number": 989,
+          "culprits": [],
+          "executor": null,
+          "mavenVersionUsed": "3.0.2",
+          "builtOn": "ubuntu-2",
+          "id": "2015-05-29_20-27-22",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 3,
+              "totalCount": 1360,
+              "skipCount": 5
+            },
+            {},
+            {},
+            {
+              "scorecard": {
+                "scores": [
+                  {
+                    "description": "1 failing tests were fixed or new tests were added",
+                    "ruleName": "Increased number of passed tests",
+                    "rulesetName": "Unit testing",
+                    "value": 1
+                  }
+                ],
+                "totalPoints": 1
+              },
+              "participants": []
+            },
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1432931242000
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Apollo-Deploy": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#425",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Apollo-Deploy #425",
+          "estimatedDuration": 933415,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Apollo-Deploy/425/",
+          "changeSet": {
+            "kind": "svn",
+            "revisions": [
+              {
+                "module": "https://svn.apache.org/repos/asf/activemq/activemq-apollo/trunk",
+                "revision": 1513995
+              }
+            ],
+            "items": []
+          },
+          "duration": 933415,
+          "result": "SUCCESS",
+          "number": 425,
+          "culprits": [],
+          "executor": null,
+          "mavenVersionUsed": "3.0.2",
+          "builtOn": "ubuntu-1",
+          "id": "2015-05-30_03-00-08",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "scorecard": {
+                "scores": [
+                  {
+                    "description": "The build was successful",
+                    "ruleName": "Build result",
+                    "rulesetName": "Build result",
+                    "value": 1
+                  }
+                ],
+                "totalPoints": 1
+              },
+              "participants": []
+            },
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1432954808000
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-LevelDB-Store": {
+        "statusCode": 404
+      },
+      "ActiveMQ-Artemis-PR-Build": {
+        "lastBuild": {
+          "queueId": 39918,
+          "displayName": "#807",
+          "keepLog": false,
+          "description": "<a href=\"https://github.com/apache/activemq-artemis/pull/241\">GitHub pull request #241 to apache/activemq-artemis</a>",
+          "fullDisplayName": "ActiveMQ-Artemis-PR-Build #807",
+          "estimatedDuration": 677514,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Artemis-PR-Build/807/",
+          "duration": 625166,
+          "result": "SUCCESS",
+          "number": 807,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jbertram",
+              "fullName": "jbertram"
+            }
+          ],
+          "executor": null,
+          "builtOn": "jenkins-ubuntu-1404-4gb-88f",
+          "id": "807",
+          "actions": [
+            {},
+            {},
+            {
+              "causes": [
+                {
+                  "shortDescription": "GitHub pull request #241 to apache/activemq-artemis"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 1582,
+              "skipCount": 3
+            },
+            {},
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1447273583839
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Java8": {
+        "lastBuild": {
+          "queueId": 41100,
+          "displayName": "#531",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Java8 #531",
+          "estimatedDuration": 14906743,
+          "building": true,
+          "url": "https://builds.apache.org/job/ActiveMQ-Java8/531/",
+          "duration": 0,
+          "result": "SUCCESS",
+          "number": 531,
+          "executor": {},
+          "mavenVersionUsed": "3.0.4",
+          "builtOn": "H10",
+          "id": "531",
+          "artifacts": [],
+          "timestamp": 1447377866723
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Java7": {
+        "lastBuild": {
+          "queueId": 41040,
+          "displayName": "#868",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Java7 #868",
+          "estimatedDuration": 15167104,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Java7/868/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-12 15:55:29 +0000",
+                "msg": "fixing unit test to dynamically use a free port",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+                  "fullName": "christopher.l.shannon"
+                },
+                "paths": [
+                  {
+                    "file": "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "fixing unit test to dynamically use a free port\n",
+                "commitId": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+                "id": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+                "affectedPaths": [
+                  "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 18969561,
+          "result": "UNSTABLE",
+          "number": 868,
+          "executor": null,
+          "mavenVersionUsed": "3.0.4",
+          "builtOn": "H10",
+          "id": "868",
+          "artifacts": [],
+          "timestamp": 1447344504364
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Artemis-Master": {
+        "lastBuild": {
+          "queueId": 40055,
+          "displayName": "#238",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Artemis-Master #238",
+          "estimatedDuration": 662180,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Artemis-Master/238/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-11 17:04:46 -0500",
+                "msg": "small tweak on test",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/clebertsuconic",
+                  "fullName": "clebertsuconic"
+                },
+                "paths": [
+                  {
+                    "file": "artemis-cli/src/test/java/org/apache/activemq/cli/test/ArtemisTest.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "small tweak on test\n",
+                "commitId": "06b0c3119309142079d71e15ae4f752e2da12edf",
+                "id": "06b0c3119309142079d71e15ae4f752e2da12edf",
+                "affectedPaths": [
+                  "artemis-cli/src/test/java/org/apache/activemq/cli/test/ArtemisTest.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 582247,
+          "result": "SUCCESS",
+          "number": 238,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/clebertsuconic",
+              "fullName": "clebertsuconic"
+            }
+          ],
+          "executor": null,
+          "builtOn": "ubuntu-4",
+          "id": "238",
+          "artifacts": [],
+          "timestamp": 1447280605738
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ Protocol Buffer": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#16",
+          "mavenArtifacts": null,
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ Protocol Buffer #16",
+          "estimatedDuration": 4716,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ%20Protocol%20Buffer/16/",
+          "changeSet": {
+            "kind": "svn",
+            "revisions": [
+              {
+                "module": "https://svn.apache.org/repos/asf/activemq/activemq-protobuf/trunk",
+                "revision": 981838
+              }
+            ],
+            "items": []
+          },
+          "duration": 4716,
+          "result": "FAILURE",
+          "number": 16,
+          "culprits": [],
+          "executor": null,
+          "mavenVersionUsed": "2.0.10",
+          "builtOn": "ubuntu-6",
+          "id": "2015-05-30_03-00-13",
+          "artifacts": [],
+          "timestamp": 1432954813000
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-PR-Build": {
+        "lastBuild": {
+          "queueId": 36125,
+          "displayName": "#129",
+          "keepLog": false,
+          "description": "<a href=\"https://github.com/apache/activemq/pull/156\">GitHub pull request #156 to apache/activemq</a>",
+          "fullDisplayName": "ActiveMQ-PR-Build #129",
+          "estimatedDuration": 527965,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-PR-Build/129/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-09 09:27:47 +0100",
+                "msg": "AMQ-6036: Parsing message selector for wildcard matches for",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/patrik",
+                  "fullName": "patrik"
+                },
+                "paths": [
+                  {
+                    "file": "activemq-broker/src/test/java/org/apache/activemq/plugin/SubQueueSelectorCacheBrokerWildcardTest.java",
+                    "editType": "add"
+                  },
+                  {
+                    "file": "activemq-broker/src/main/java/org/apache/activemq/plugin/SubQueueSelectorCacheBroker.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "AMQ-6036: Parsing message selector for wildcard matches for\nignoreWildcardSelectors feature\nhttps://issues.apache.org/jira/browse/AMQ-6036\n",
+                "commitId": "201497448db49ea8921d8c4982f330fec171fd5f",
+                "id": "201497448db49ea8921d8c4982f330fec171fd5f",
+                "affectedPaths": [
+                  "activemq-broker/src/test/java/org/apache/activemq/plugin/SubQueueSelectorCacheBrokerWildcardTest.java",
+                  "activemq-broker/src/main/java/org/apache/activemq/plugin/SubQueueSelectorCacheBroker.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 502134,
+          "result": "SUCCESS",
+          "number": 129,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/patrik",
+              "fullName": "patrik"
+            }
+          ],
+          "executor": null,
+          "builtOn": "ubuntu-4",
+          "id": "129",
+          "artifacts": [],
+          "timestamp": 1447058084315
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Artemis-Nightly-Regression-Test": {
+        "lastBuild": {
+          "queueId": 40093,
+          "displayName": "#346",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Artemis-Nightly-Regression-Test #346",
+          "estimatedDuration": 10869651,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Artemis-Nightly-Regression-Test/346/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-11 17:04:46 -0500",
+                "msg": "small tweak on test",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/clebertsuconic",
+                  "fullName": "clebertsuconic"
+                },
+                "paths": [
+                  {
+                    "file": "artemis-cli/src/test/java/org/apache/activemq/cli/test/ArtemisTest.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "small tweak on test\n",
+                "commitId": "06b0c3119309142079d71e15ae4f752e2da12edf",
+                "id": "06b0c3119309142079d71e15ae4f752e2da12edf",
+                "affectedPaths": [
+                  "artemis-cli/src/test/java/org/apache/activemq/cli/test/ArtemisTest.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 13073098,
+          "result": "UNSTABLE",
+          "number": 346,
+          "executor": null,
+          "builtOn": "ubuntu3",
+          "id": "346",
+          "artifacts": [],
+          "timestamp": 1447288894775
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-Java7-All-UnitTests": {
+        "lastBuild": {
+          "queueId": 41056,
+          "displayName": "#276",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-Java7-All-UnitTests #276",
+          "estimatedDuration": 17747710,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-Java7-All-UnitTests/276/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-12 15:55:29 +0000",
+                "msg": "fixing unit test to dynamically use a free port",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+                  "fullName": "christopher.l.shannon"
+                },
+                "paths": [
+                  {
+                    "file": "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "fixing unit test to dynamically use a free port\n",
+                "commitId": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+                "id": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+                "affectedPaths": [
+                  "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 14390285,
+          "result": "FAILURE",
+          "number": 276,
+          "executor": null,
+          "mavenVersionUsed": "3.0.4",
+          "builtOn": "ubuntu-1",
+          "id": "276",
+          "artifacts": [],
+          "timestamp": 1447363475105
+        },
+        "statusCode": 200
+      },
+      "ActiveMQ-SysTest-Trunk": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#11",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "ActiveMQ-SysTest-Trunk #11",
+          "estimatedDuration": 63980,
+          "building": false,
+          "url": "https://builds.apache.org/job/ActiveMQ-SysTest-Trunk/11/",
+          "changeSet": {
+            "kind": "svn",
+            "revisions": [
+              {
+                "module": "https://svn.apache.org/repos/asf/activemq/activemq-systest/trunk",
+                "revision": 929491
+              }
+            ],
+            "items": []
+          },
+          "duration": 63980,
+          "result": "UNSTABLE",
+          "number": 11,
+          "culprits": [],
+          "executor": null,
+          "mavenVersionUsed": "3.0.4",
+          "builtOn": "ubuntu-4",
+          "id": "2015-05-30_05-00-09",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 1,
+              "totalCount": 2,
+              "skipCount": 0
+            },
+            {},
+            {},
+            {},
+            {
+              "scorecard": {
+                "scores": [],
+                "totalPoints": 0
+              },
+              "participants": []
+            },
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1432962009000
+        },
+        "statusCode": 200
+      }
+    }
+  },
+  {
+    "jenkinsServerUrl": "https://builds.apache.org",
+    "jobNamePattern": "Ambari.*?",
+    "lastBuilds": {
+      "Ambari-trunk-Commit": {
+        "lastBuild": {
+          "queueId": 41548,
+          "displayName": "#3825",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-trunk-Commit #3825",
+          "estimatedDuration": 7036770,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-trunk-Commit/3825/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-12 14:54:28 -0800",
+                "msg": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/xiwang",
+                  "fullName": "xiwang"
+                },
+                "paths": [
+                  {
+                    "file": "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs",
+                    "editType": "edit"
+                  },
+                  {
+                    "file": "ambari-web/app/models/upgrade_entity.js",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade\nPre-Check failed due MM host.(xiwang)\n",
+                "commitId": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "id": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "affectedPaths": [
+                  "ambari-web/app/models/upgrade_entity.js",
+                  "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 7115805,
+          "result": "FAILURE",
+          "number": 3825,
+          "executor": null,
+          "builtOn": "H3",
+          "id": "3825",
+          "artifacts": [],
+          "timestamp": 1447375642597
+        },
+        "statusCode": 200
+      },
+      "Ambari-branch-1.7.0-docker": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#181",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-branch-1.7.0-docker #181",
+          "estimatedDuration": 2322629,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-branch-1.7.0-docker/181/",
+          "duration": 2322629,
+          "result": "SUCCESS",
+          "number": 181,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jhurley",
+              "fullName": "jhurley"
+            }
+          ],
+          "executor": null,
+          "builtOn": "ubuntu-6",
+          "id": "2015-03-05_19-55-41",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                },
+                {
+                  "shortDescription": "Started by an SCM change"
+                },
+                {
+                  "shortDescription": "Started by an SCM change"
+                },
+                {
+                  "shortDescription": "Started by an SCM change"
+                },
+                {
+                  "shortDescription": "Started by an SCM change"
+                },
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/branch-1.7.0": {
+                  "marked": {
+                    "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                    "branch": [
+                      {
+                        "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                        "name": "origin/branch-1.7.0"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 181,
+                  "revision": {
+                    "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                    "branch": [
+                      {
+                        "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                        "name": "origin/branch-1.7.0"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                "branch": [
+                  {
+                    "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                    "name": "origin/branch-1.7.0"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "http://git-wip-us.apache.org/repos/asf/ambari.git"
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 2203,
+              "skipCount": 15
+            },
+            {}
+          ],
+          "timestamp": 1425585341000
+        },
+        "statusCode": 200
+      },
+      "Ambari-branch-2.0.0": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#122",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-branch-2.0.0 #122",
+          "estimatedDuration": 3232855,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-branch-2.0.0/122/",
+          "duration": 3633224,
+          "result": "ABORTED",
+          "number": 122,
+          "executor": null,
+          "builtOn": "H3",
+          "id": "2015-06-30_13-03-10",
+          "artifacts": [],
+          "timestamp": 1435669390000
+        },
+        "statusCode": 200
+      },
+      "Ambari-trunk-Commit-docker": {
+        "statusCode": 404
+      },
+      "Ambari-branch-2.1": {
+        "lastBuild": {
+          "queueId": 41467,
+          "displayName": "#851",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-branch-2.1 #851",
+          "estimatedDuration": 7109228,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-branch-2.1/851/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-12 14:18:25 -0800",
+                "msg": "AMBARI-13866. SNMPv3 option for SNMP Alert Notification needs to be",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/rzang",
+                  "fullName": "rzang"
+                },
+                "paths": [
+                  {
+                    "file": "ambari-web/app/controllers/main/alerts/manage_alert_notifications_controller.js",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "AMBARI-13866. SNMPv3 option for SNMP Alert Notification needs to be\nremoved (rzang)\n",
+                "commitId": "b0f46e7f024a44d31617dd17195f3e9f947b17d6",
+                "id": "b0f46e7f024a44d31617dd17195f3e9f947b17d6",
+                "affectedPaths": [
+                  "ambari-web/app/controllers/main/alerts/manage_alert_notifications_controller.js"
+                ],
+                "timestamp": -1
+              },
+              {
+                "date": "2015-11-12 14:45:32 -0800",
+                "msg": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/xiwang",
+                  "fullName": "xiwang"
+                },
+                "paths": [
+                  {
+                    "file": "ambari-web/app/models/upgrade_entity.js",
+                    "editType": "edit"
+                  },
+                  {
+                    "file": "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade\nPre-Check failed due MM host.(xiwang)\n",
+                "commitId": "cc77797be2d645d1f1c798617eb837ab04204fdc",
+                "id": "cc77797be2d645d1f1c798617eb837ab04204fdc",
+                "affectedPaths": [
+                  "ambari-web/app/models/upgrade_entity.js",
+                  "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 7468624,
+          "result": "FAILURE",
+          "number": 851,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/afernandez",
+              "fullName": "afernandez"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/aonishuk",
+              "fullName": "aonishuk"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/dlysnichenko",
+              "fullName": "dlysnichenko"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jaimin",
+              "fullName": "jaimin"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jhurley",
+              "fullName": "jhurley"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jluniya",
+              "fullName": "jluniya"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/rlevas",
+              "fullName": "rlevas"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/rnettleton",
+              "fullName": "rnettleton"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/rzang",
+              "fullName": "rzang"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/smohanty",
+              "fullName": "smohanty"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/swagle",
+              "fullName": "swagle"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/vbrodetskyi",
+              "fullName": "vbrodetskyi"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/xiwang",
+              "fullName": "xiwang"
+            }
+          ],
+          "executor": null,
+          "builtOn": "H2",
+          "id": "851",
+          "artifacts": [],
+          "timestamp": 1447371821366
+        },
+        "statusCode": 200
+      },
+      "Ambari-branch-1.7.0": {
+        "lastBuild": {
+          "queueId": -1,
+          "displayName": "#418",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-branch-1.7.0 #418",
+          "estimatedDuration": 1907949,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-branch-1.7.0/418/",
+          "duration": 1907949,
+          "result": "SUCCESS",
+          "number": 418,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/aonishuk",
+              "fullName": "aonishuk"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jhurley",
+              "fullName": "jhurley"
+            }
+          ],
+          "executor": null,
+          "builtOn": "H7",
+          "id": "2015-04-27_11-45-37",
+          "artifacts": [],
+          "timestamp": 1430135137000
+        },
+        "statusCode": 200
+      },
+      "Ambari-trunk-test-patch": {
+        "lastBuild": {
+          "queueId": 41523,
+          "displayName": "#4276",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-trunk-test-patch #4276",
+          "estimatedDuration": 3358485,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-trunk-test-patch/4276/",
+          "changeSet": {
+            "kind": null,
+            "items": []
+          },
+          "duration": 1101017,
+          "result": "SUCCESS",
+          "number": 4276,
+          "culprits": [],
+          "executor": null,
+          "builtOn": "H9",
+          "id": "4276",
+          "actions": [
+            {
+              "parameters": [
+                {
+                  "name": "JIRA_NUMBER",
+                  "value": "AMBARI-13868"
+                }
+              ]
+            },
+            {
+              "causes": [
+                {
+                  "note": null,
+                  "shortDescription": "Started by remote host 127.0.0.1",
+                  "addr": "127.0.0.1"
+                }
+              ]
+            },
+            {},
+            {},
+            {}
+          ],
+          "artifacts": [
+            {
+              "fileName": "filteredPatchJavacWarnings.txt",
+              "relativePath": "patch-work/filteredPatchJavacWarnings.txt",
+              "displayPath": "filteredPatchJavacWarnings.txt"
+            },
+            {
+              "fileName": "filteredTrunkJavacWarnings.txt",
+              "relativePath": "patch-work/filteredTrunkJavacWarnings.txt",
+              "displayPath": "filteredTrunkJavacWarnings.txt"
+            },
+            {
+              "fileName": "patchJavacWarnings.txt",
+              "relativePath": "patch-work/patchJavacWarnings.txt",
+              "displayPath": "patchJavacWarnings.txt"
+            },
+            {
+              "fileName": "patchReleaseAuditOutput.txt",
+              "relativePath": "patch-work/patchReleaseAuditOutput.txt",
+              "displayPath": "patchReleaseAuditOutput.txt"
+            },
+            {
+              "fileName": "patchReleaseAuditWarnings.txt",
+              "relativePath": "patch-work/patchReleaseAuditWarnings.txt",
+              "displayPath": "patchReleaseAuditWarnings.txt"
+            },
+            {
+              "fileName": "testrun_ambari-web.txt",
+              "relativePath": "patch-work/testrun_ambari-web.txt",
+              "displayPath": "testrun_ambari-web.txt"
+            },
+            {
+              "fileName": "trunkCompile.txt",
+              "relativePath": "patch-work/trunkCompile.txt",
+              "displayPath": "trunkCompile.txt"
+            },
+            {
+              "fileName": "trunkJavacWarnings.txt",
+              "relativePath": "patch-work/trunkJavacWarnings.txt",
+              "displayPath": "trunkJavacWarnings.txt"
+            }
+          ],
+          "timestamp": 1447370482030
+        },
+        "statusCode": 200
+      },
+      "Ambari-trunk-find-patches-available": {
+        "lastBuild": {
+          "queueId": 41588,
+          "displayName": "#28334",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-trunk-find-patches-available #28334",
+          "estimatedDuration": 8159,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-trunk-find-patches-available/28334/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-12 14:54:28 -0800",
+                "msg": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/xiwang",
+                  "fullName": "xiwang"
+                },
+                "paths": [
+                  {
+                    "file": "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs",
+                    "editType": "edit"
+                  },
+                  {
+                    "file": "ambari-web/app/models/upgrade_entity.js",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade\nPre-Check failed due MM host.(xiwang)\n",
+                "commitId": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "id": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "affectedPaths": [
+                  "ambari-web/app/models/upgrade_entity.js",
+                  "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 7643,
+          "result": "SUCCESS",
+          "number": 28334,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/xiwang",
+              "fullName": "xiwang"
+            }
+          ],
+          "executor": null,
+          "builtOn": "H5",
+          "id": "28334",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {
+              "parameters": [
+                {
+                  "name": "OPTIONS",
+                  "value": "--submit"
+                }
+              ]
+            },
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/trunk": {
+                  "marked": {
+                    "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                    "branch": [
+                      {
+                        "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                        "name": "origin/trunk"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 28334,
+                  "revision": {
+                    "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                    "branch": [
+                      {
+                        "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                        "name": "origin/trunk"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "branch": [
+                  {
+                    "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                    "name": "origin/trunk"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "http://git-wip-us.apache.org/repos/asf/ambari.git"
+              ]
+            },
+            {},
+            {},
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1447374748653
+        },
+        "statusCode": 200
+      },
+      "Ambari-trunk-Commit-debug": {
+        "statusCode": 404
+      },
+      "Ambari-view": {
+        "lastBuild": {
+          "queueId": 41709,
+          "displayName": "#1856",
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Ambari-view #1856",
+          "estimatedDuration": 616123,
+          "building": false,
+          "url": "https://builds.apache.org/job/Ambari-view/1856/",
+          "changeSet": {
+            "kind": "git",
+            "items": []
+          },
+          "duration": 526157,
+          "result": "FAILURE",
+          "number": 1856,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/ababiichuk",
+              "fullName": "ababiichuk"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/abaranchuk",
+              "fullName": "abaranchuk"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/afernandez",
+              "fullName": "afernandez"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/akovalenko",
+              "fullName": "akovalenko"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/aonishuk",
+              "fullName": "aonishuk"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/atkach",
+              "fullName": "atkach"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/babiychukandrey",
+              "fullName": "babiychukandrey"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/dlysnichenko",
+              "fullName": "dlysnichenko"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/dsen",
+              "fullName": "dsen"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/eyang",
+              "fullName": "eyang"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/fbarca",
+              "fullName": "fbarca"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/gautam",
+              "fullName": "gautam"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/gborad",
+              "fullName": "gborad"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/hiveww",
+              "fullName": "hiveww"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jaimin",
+              "fullName": "jaimin"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jaoki",
+              "fullName": "jaoki"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jhurley",
+              "fullName": "jhurley"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jluniya",
+              "fullName": "jluniya"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/jspeidel",
+              "fullName": "jspeidel"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/mahadev",
+              "fullName": "mahadev"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/mpapyrkovskyy",
+              "fullName": "mpapyrkovskyy"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/ncole",
+              "fullName": "ncole"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/odiachenko",
+              "fullName": "odiachenko"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/onechiporenko",
+              "fullName": "onechiporenko"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/rlevas",
+              "fullName": "rlevas"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/rnettleton",
+              "fullName": "rnettleton"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/rzang",
+              "fullName": "rzang"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/sgunturi",
+              "fullName": "sgunturi"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/smohanty",
+              "fullName": "smohanty"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/swagle",
+              "fullName": "swagle"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/tbeerbower",
+              "fullName": "tbeerbower"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/vbrodetskyi",
+              "fullName": "vbrodetskyi"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/vivekratnavel90",
+              "fullName": "vivekratnavel90"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/xiwang",
+              "fullName": "xiwang"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/yusaku",
+              "fullName": "yusaku"
+            }
+          ],
+          "executor": null,
+          "builtOn": "H6",
+          "id": "1856",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "upstreamBuild": 3825,
+                  "upstreamUrl": "job/Ambari-trunk-Commit/",
+                  "shortDescription": "Started by upstream project \"Ambari-trunk-Commit\" build number 3,825",
+                  "upstreamProject": "Ambari-trunk-Commit"
+                }
+              ]
+            },
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/trunk": {
+                  "marked": {
+                    "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                    "branch": [
+                      {
+                        "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                        "name": "origin/trunk"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 1856,
+                  "revision": {
+                    "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                    "branch": [
+                      {
+                        "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                        "name": "origin/trunk"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "branch": [
+                  {
+                    "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                    "name": "origin/trunk"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "http://git-wip-us.apache.org/repos/asf/ambari.git"
+              ]
+            },
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 144,
+              "skipCount": 0
+            },
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1447382763655
+        },
+        "statusCode": 200
+      }
+    }
+  },
+  {
+    "jenkinsServerUrl": "https://builds.apache.org",
+    "jobs": {
+      "Accumulo-1.7": {
+        "color": "red",
+        "name": "Accumulo-1.7",
+        "url": "https://builds.apache.org/job/Accumulo-1.7/"
+      },
+      "Accumulo-Master": {
+        "color": "blue",
+        "name": "Accumulo-Master",
+        "url": "https://builds.apache.org/job/Accumulo-Master/"
+      },
+      "Accumulo-1.6": {
+        "color": "blue",
+        "name": "Accumulo-1.6",
+        "url": "https://builds.apache.org/job/Accumulo-1.6/"
+      },
+      "Accumulo-Pull-Requests": {
+        "color": "red",
+        "name": "Accumulo-Pull-Requests",
+        "url": "https://builds.apache.org/job/Accumulo-Pull-Requests/"
+      }
+    },
+    "jobNamePattern": "Accumulo.*?",
+    "lastBuilds": {
+      "Accumulo-1.7": {
+        "lastBuild": {
+          "queueId": 29120,
+          "displayName": "#159",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Accumulo-1.7 #159",
+          "estimatedDuration": 1604941,
+          "building": false,
+          "url": "https://builds.apache.org/job/Accumulo-1.7/159/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-02 10:45:40 -0500",
+                "msg": "ACCUMULO-3356 Add the explicit default constructor for tests.",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/elserj",
+                  "fullName": "elserj"
+                },
+                "paths": [
+                  {
+                    "file": "server/base/src/main/java/org/apache/accumulo/server/master/balancer/ChaoticLoadBalancer.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "ACCUMULO-3356 Add the explicit default constructor for tests.\n",
+                "commitId": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "id": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "affectedPaths": [
+                  "server/base/src/main/java/org/apache/accumulo/server/master/balancer/ChaoticLoadBalancer.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 315629,
+          "result": "FAILURE",
+          "number": 159,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/elserj",
+              "fullName": "elserj"
+            }
+          ],
+          "executor": null,
+          "mavenVersionUsed": "3.2.1",
+          "builtOn": "jenkins-ubuntu-1404-4gb-6a7",
+          "id": "159",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/1.7": {
+                  "marked": {
+                    "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                    "branch": [
+                      {
+                        "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                        "name": "origin/1.7"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 159,
+                  "revision": {
+                    "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                    "branch": [
+                      {
+                        "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                        "name": "origin/1.7"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "branch": [
+                  {
+                    "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                    "name": "origin/1.7"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "git://git.apache.org/accumulo.git"
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 83,
+              "skipCount": 1
+            },
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1446479350960
+        },
+        "statusCode": 200
+      },
+      "Accumulo-Master": {
+        "lastBuild": {
+          "queueId": 29166,
+          "displayName": "#1754",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Accumulo-Master #1754",
+          "estimatedDuration": 937834,
+          "building": false,
+          "url": "https://builds.apache.org/job/Accumulo-Master/1754/",
+          "changeSet": {
+            "kind": "git",
+            "items": [
+              {
+                "date": "2015-11-02 10:45:40 -0500",
+                "msg": "ACCUMULO-3356 Add the explicit default constructor for tests.",
+                "author": {
+                  "absoluteUrl": "https://builds.apache.org/user/elserj",
+                  "fullName": "elserj"
+                },
+                "paths": [
+                  {
+                    "file": "server/base/src/main/java/org/apache/accumulo/server/master/balancer/ChaoticLoadBalancer.java",
+                    "editType": "edit"
+                  }
+                ],
+                "comment": "ACCUMULO-3356 Add the explicit default constructor for tests.\n",
+                "commitId": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "id": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "affectedPaths": [
+                  "server/base/src/main/java/org/apache/accumulo/server/master/balancer/ChaoticLoadBalancer.java"
+                ],
+                "timestamp": -1
+              }
+            ]
+          },
+          "duration": 2234395,
+          "result": "SUCCESS",
+          "number": 1754,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/elserj",
+              "fullName": "elserj"
+            },
+            {
+              "absoluteUrl": "https://builds.apache.org/user/eric.newton",
+              "fullName": "eric.newton"
+            }
+          ],
+          "executor": null,
+          "mavenVersionUsed": "3.0.5",
+          "builtOn": "jenkins-ubuntu-1404-4gb-6a7",
+          "id": "1754",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/master": {
+                  "marked": {
+                    "SHA1": "0e136c1f4276373b09d1a2e4d901c0d16809e6db",
+                    "branch": [
+                      {
+                        "SHA1": "0e136c1f4276373b09d1a2e4d901c0d16809e6db",
+                        "name": "origin/master"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 1754,
+                  "revision": {
+                    "SHA1": "0e136c1f4276373b09d1a2e4d901c0d16809e6db",
+                    "branch": [
+                      {
+                        "SHA1": "0e136c1f4276373b09d1a2e4d901c0d16809e6db",
+                        "name": "origin/master"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "0e136c1f4276373b09d1a2e4d901c0d16809e6db",
+                "branch": [
+                  {
+                    "SHA1": "0e136c1f4276373b09d1a2e4d901c0d16809e6db",
+                    "name": "origin/master"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "git://git.apache.org/accumulo.git"
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 1434,
+              "skipCount": 6
+            },
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1446482052622
+        },
+        "statusCode": 200
+      },
+      "Accumulo-1.6": {
+        "lastBuild": {
+          "queueId": 23820,
+          "displayName": "#919",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": null,
+          "fullDisplayName": "Accumulo-1.6 #919",
+          "estimatedDuration": 1416717,
+          "building": false,
+          "url": "https://builds.apache.org/job/Accumulo-1.6/919/",
+          "changeSet": {
+            "kind": "git",
+            "items": []
+          },
+          "duration": 1343226,
+          "result": "SUCCESS",
+          "number": 919,
+          "culprits": [],
+          "executor": null,
+          "mavenVersionUsed": "3.0.5",
+          "builtOn": "ubuntu3",
+          "id": "919",
+          "actions": [
+            {
+              "causes": [
+                {
+                  "shortDescription": "Started by an SCM change"
+                }
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "origin/1.6.2-SNAPSHOT": {
+                  "marked": {
+                    "SHA1": "2ad40744839dace578ebef1ffb4b28418222ab4b",
+                    "branch": [
+                      {
+                        "SHA1": "2ad40744839dace578ebef1ffb4b28418222ab4b",
+                        "name": "origin/1.6.2-SNAPSHOT"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 568,
+                  "revision": {
+                    "SHA1": "2ad40744839dace578ebef1ffb4b28418222ab4b",
+                    "branch": [
+                      {
+                        "SHA1": "2ad40744839dace578ebef1ffb4b28418222ab4b",
+                        "name": "origin/1.6.2-SNAPSHOT"
+                      }
+                    ]
+                  }
+                },
+                "origin/1.6.0-SNAPSHOT": {
+                  "marked": {
+                    "SHA1": "1c38957c453df84462a2cd837b155d590d012d05",
+                    "branch": [
+                      {
+                        "SHA1": "1c38957c453df84462a2cd837b155d590d012d05",
+                        "name": "origin/1.6.0-SNAPSHOT"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 387,
+                  "revision": {
+                    "SHA1": "1c38957c453df84462a2cd837b155d590d012d05",
+                    "branch": [
+                      {
+                        "SHA1": "1c38957c453df84462a2cd837b155d590d012d05",
+                        "name": "origin/1.6.0-SNAPSHOT"
+                      }
+                    ]
+                  }
+                },
+                "origin/1.6.1-SNAPSHOT": {
+                  "marked": {
+                    "SHA1": "65be6dc28bd1ae479d81e740edc83045b372e76e",
+                    "branch": [
+                      {
+                        "SHA1": "65be6dc28bd1ae479d81e740edc83045b372e76e",
+                        "name": "origin/1.6.1-SNAPSHOT"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 560,
+                  "revision": {
+                    "SHA1": "65be6dc28bd1ae479d81e740edc83045b372e76e",
+                    "branch": [
+                      {
+                        "SHA1": "65be6dc28bd1ae479d81e740edc83045b372e76e",
+                        "name": "origin/1.6.1-SNAPSHOT"
+                      }
+                    ]
+                  }
+                },
+                "origin/1.6": {
+                  "marked": {
+                    "SHA1": "1619ae40985cab1f9795f0246c1bde60c1a4a8aa",
+                    "branch": [
+                      {
+                        "SHA1": "1619ae40985cab1f9795f0246c1bde60c1a4a8aa",
+                        "name": "origin/1.6"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 919,
+                  "revision": {
+                    "SHA1": "1619ae40985cab1f9795f0246c1bde60c1a4a8aa",
+                    "branch": [
+                      {
+                        "SHA1": "1619ae40985cab1f9795f0246c1bde60c1a4a8aa",
+                        "name": "origin/1.6"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "1619ae40985cab1f9795f0246c1bde60c1a4a8aa",
+                "branch": [
+                  {
+                    "SHA1": "1619ae40985cab1f9795f0246c1bde60c1a4a8aa",
+                    "name": "origin/1.6"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "git://git.apache.org/accumulo.git"
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 1150,
+              "skipCount": 6
+            },
+            {},
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1446047171058
+        },
+        "statusCode": 200
+      },
+      "Accumulo-Pull-Requests": {
+        "lastBuild": {
+          "queueId": 41183,
+          "displayName": "#161",
+          "mavenArtifacts": {},
+          "keepLog": false,
+          "description": "<a href=\"https://github.com/apache/accumulo/pull/51\">GitHub pull request #51 to apache/accumulo</a>",
+          "fullDisplayName": "Accumulo-Pull-Requests #161",
+          "estimatedDuration": 554820,
+          "building": false,
+          "url": "https://builds.apache.org/job/Accumulo-Pull-Requests/161/",
+          "duration": 232412,
+          "result": "FAILURE",
+          "number": 161,
+          "culprits": [
+            {
+              "absoluteUrl": "https://builds.apache.org/user/dlmarion",
+              "fullName": "dlmarion"
+            }
+          ],
+          "executor": null,
+          "mavenVersionUsed": "3.2.1",
+          "builtOn": "ubuntu-4",
+          "id": "161",
+          "actions": [
+            {},
+            {},
+            {
+              "causes": [
+                {
+                  "shortDescription": "GitHub pull request #51 to apache/accumulo"
+                }
+              ]
+            },
+            {},
+            {},
+            {
+              "buildsByBranchName": {
+                "1.6.2-SNAPSHOT": {
+                  "marked": {
+                    "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+                    "branch": [
+                      {
+                        "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+                        "name": "1.6.2-SNAPSHOT"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 10,
+                  "revision": {
+                    "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+                    "branch": [
+                      {
+                        "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+                        "name": "1.6.2-SNAPSHOT"
+                      }
+                    ]
+                  }
+                },
+                "1.5": {
+                  "marked": {
+                    "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+                    "branch": [
+                      {
+                        "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+                        "name": "1.5"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 37,
+                  "revision": {
+                    "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+                    "branch": [
+                      {
+                        "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+                        "name": "1.5"
+                      }
+                    ]
+                  }
+                },
+                "1.6": {
+                  "marked": {
+                    "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+                    "branch": [
+                      {
+                        "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+                        "name": "1.6"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 155,
+                  "revision": {
+                    "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+                    "branch": [
+                      {
+                        "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+                        "name": "1.6"
+                      }
+                    ]
+                  }
+                },
+                "1.7": {
+                  "marked": {
+                    "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+                    "branch": [
+                      {
+                        "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+                        "name": "1.7"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 141,
+                  "revision": {
+                    "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+                    "branch": [
+                      {
+                        "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+                        "name": "1.7"
+                      }
+                    ]
+                  }
+                },
+                "master": {
+                  "marked": {
+                    "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                    "branch": [
+                      {
+                        "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                        "name": "master"
+                      }
+                    ]
+                  },
+                  "buildResult": null,
+                  "buildNumber": 161,
+                  "revision": {
+                    "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                    "branch": [
+                      {
+                        "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                        "name": "master"
+                      }
+                    ]
+                  }
+                }
+              },
+              "lastBuiltRevision": {
+                "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                "branch": [
+                  {
+                    "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                    "name": "master"
+                  }
+                ]
+              },
+              "scmName": "",
+              "remoteUrls": [
+                "git://github.com/apache/accumulo.git"
+              ]
+            },
+            {},
+            {},
+            {},
+            {
+              "urlName": "testReport",
+              "failCount": 0,
+              "totalCount": 83,
+              "skipCount": 1
+            },
+            {},
+            {},
+            {}
+          ],
+          "artifacts": [],
+          "timestamp": 1447351859242
+        },
+        "statusCode": 200
+      }
+    }
+  }
+]

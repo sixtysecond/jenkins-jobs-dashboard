@@ -1,0 +1,226 @@
+{
+  "queueId": 41709,
+  "displayName": "#1856",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Ambari-view #1856",
+  "estimatedDuration": 616123,
+  "building": false,
+  "url": "https://builds.apache.org/job/Ambari-view/1856/",
+  "changeSet": {
+    "kind": "git",
+    "items": []
+  },
+  "duration": 526157,
+  "result": "FAILURE",
+  "number": 1856,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/ababiichuk",
+      "fullName": "ababiichuk"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/abaranchuk",
+      "fullName": "abaranchuk"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/afernandez",
+      "fullName": "afernandez"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/akovalenko",
+      "fullName": "akovalenko"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/aonishuk",
+      "fullName": "aonishuk"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/atkach",
+      "fullName": "atkach"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/babiychukandrey",
+      "fullName": "babiychukandrey"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/dlysnichenko",
+      "fullName": "dlysnichenko"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/dsen",
+      "fullName": "dsen"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/eyang",
+      "fullName": "eyang"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/fbarca",
+      "fullName": "fbarca"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/gautam",
+      "fullName": "gautam"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/gborad",
+      "fullName": "gborad"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/hiveww",
+      "fullName": "hiveww"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jaimin",
+      "fullName": "jaimin"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jaoki",
+      "fullName": "jaoki"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jhurley",
+      "fullName": "jhurley"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jluniya",
+      "fullName": "jluniya"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jspeidel",
+      "fullName": "jspeidel"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/mahadev",
+      "fullName": "mahadev"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/mpapyrkovskyy",
+      "fullName": "mpapyrkovskyy"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/ncole",
+      "fullName": "ncole"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/odiachenko",
+      "fullName": "odiachenko"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/onechiporenko",
+      "fullName": "onechiporenko"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/rlevas",
+      "fullName": "rlevas"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/rnettleton",
+      "fullName": "rnettleton"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/rzang",
+      "fullName": "rzang"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/sgunturi",
+      "fullName": "sgunturi"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/smohanty",
+      "fullName": "smohanty"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/swagle",
+      "fullName": "swagle"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/tbeerbower",
+      "fullName": "tbeerbower"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/vbrodetskyi",
+      "fullName": "vbrodetskyi"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/vivekratnavel90",
+      "fullName": "vivekratnavel90"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/xiwang",
+      "fullName": "xiwang"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/yusaku",
+      "fullName": "yusaku"
+    }
+  ],
+  "executor": null,
+  "builtOn": "H6",
+  "id": "1856",
+  "actions": [
+    {
+      "causes": [
+        {
+          "upstreamBuild": 3825,
+          "upstreamUrl": "job/Ambari-trunk-Commit/",
+          "shortDescription": "Started by upstream project \"Ambari-trunk-Commit\" build number 3,825",
+          "upstreamProject": "Ambari-trunk-Commit"
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "buildsByBranchName": {
+        "origin/trunk": {
+          "marked": {
+            "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+            "branch": [
+              {
+                "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "name": "origin/trunk"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 1856,
+          "revision": {
+            "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+            "branch": [
+              {
+                "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+                "name": "origin/trunk"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+        "branch": [
+          {
+            "SHA1": "8dc133502028dd4f402c1a4516a8325849c1d696",
+            "name": "origin/trunk"
+          }
+        ]
+      },
+      "scmName": "",
+      "remoteUrls": [
+        "http://git-wip-us.apache.org/repos/asf/ambari.git"
+      ]
+    },
+    {},
+    {},
+    {
+      "urlName": "testReport",
+      "failCount": 0,
+      "totalCount": 144,
+      "skipCount": 0
+    },
+    {}
+  ],
+  "artifacts": [],
+  "timestamp": 1447382763655
+}

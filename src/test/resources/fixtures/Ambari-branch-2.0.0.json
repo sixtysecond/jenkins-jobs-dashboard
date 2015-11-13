@@ -1,0 +1,18 @@
+{
+  "queueId": -1,
+  "displayName": "#122",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Ambari-branch-2.0.0 #122",
+  "estimatedDuration": 3232855,
+  "building": false,
+  "url": "https://builds.apache.org/job/Ambari-branch-2.0.0/122/",
+  "duration": 3633224,
+  "result": "ABORTED",
+  "number": 122,
+  "executor": null,
+  "builtOn": "H3",
+  "id": "2015-06-30_13-03-10",
+  "artifacts": [],
+  "timestamp": 1435669390000
+}

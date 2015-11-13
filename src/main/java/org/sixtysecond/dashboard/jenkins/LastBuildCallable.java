@@ -32,6 +32,8 @@ public class LastBuildCallable implements Callable {
 
         //        System.out.println("lastBuildUrl="+lastBuildUrl);
         Response response = given().when()
+                .relaxedHTTPSValidation()
+                .redirects().follow(true)
                 .get(lastBuildUrl)
                 .andReturn();
 

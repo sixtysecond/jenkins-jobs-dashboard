@@ -1,0 +1,68 @@
+{
+  "queueId": -1,
+  "displayName": "#989",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ-Apollo #989",
+  "estimatedDuration": 878812,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ-Apollo/989/",
+  "changeSet": {
+    "kind": "svn",
+    "revisions": [
+      {
+        "module": "https://svn.apache.org/repos/asf/activemq/activemq-apollo/trunk",
+        "revision": 1513995
+      }
+    ],
+    "items": []
+  },
+  "duration": 878812,
+  "result": "UNSTABLE",
+  "number": 989,
+  "culprits": [],
+  "executor": null,
+  "mavenVersionUsed": "3.0.2",
+  "builtOn": "ubuntu-2",
+  "id": "2015-05-29_20-27-22",
+  "actions": [
+    {
+      "causes": [
+        {
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "urlName": "testReport",
+      "failCount": 3,
+      "totalCount": 1360,
+      "skipCount": 5
+    },
+    {},
+    {},
+    {
+      "scorecard": {
+        "scores": [
+          {
+            "description": "1 failing tests were fixed or new tests were added",
+            "ruleName": "Increased number of passed tests",
+            "rulesetName": "Unit testing",
+            "value": 1
+          }
+        ],
+        "totalPoints": 1
+      },
+      "participants": []
+    },
+    {}
+  ],
+  "artifacts": [],
+  "timestamp": 1432931242000
+}

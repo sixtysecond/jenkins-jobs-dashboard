@@ -1,0 +1,178 @@
+{
+  "queueId": 41183,
+  "displayName": "#161",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": "<a href=\"https://github.com/apache/accumulo/pull/51\">GitHub pull request #51 to apache/accumulo</a>",
+  "fullDisplayName": "Accumulo-Pull-Requests #161",
+  "estimatedDuration": 554820,
+  "building": false,
+  "url": "https://builds.apache.org/job/Accumulo-Pull-Requests/161/",
+  "duration": 232412,
+  "result": "FAILURE",
+  "number": 161,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/dlmarion",
+      "fullName": "dlmarion"
+    }
+  ],
+  "executor": null,
+  "mavenVersionUsed": "3.2.1",
+  "builtOn": "ubuntu-4",
+  "id": "161",
+  "actions": [
+    {},
+    {},
+    {
+      "causes": [
+        {
+          "shortDescription": "GitHub pull request #51 to apache/accumulo"
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "buildsByBranchName": {
+        "1.6.2-SNAPSHOT": {
+          "marked": {
+            "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+            "branch": [
+              {
+                "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+                "name": "1.6.2-SNAPSHOT"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 10,
+          "revision": {
+            "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+            "branch": [
+              {
+                "SHA1": "6bc03e7f392b2d2b16cc7953d6e52a9dd6ad6a65",
+                "name": "1.6.2-SNAPSHOT"
+              }
+            ]
+          }
+        },
+        "1.5": {
+          "marked": {
+            "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+            "branch": [
+              {
+                "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+                "name": "1.5"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 37,
+          "revision": {
+            "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+            "branch": [
+              {
+                "SHA1": "a3a9ef906b0d1dbd55969ee15ab5817811ab58d7",
+                "name": "1.5"
+              }
+            ]
+          }
+        },
+        "1.6": {
+          "marked": {
+            "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+            "branch": [
+              {
+                "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+                "name": "1.6"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 155,
+          "revision": {
+            "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+            "branch": [
+              {
+                "SHA1": "bbea55d0a44aba086533a7c34245f7d286cdea65",
+                "name": "1.6"
+              }
+            ]
+          }
+        },
+        "1.7": {
+          "marked": {
+            "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+            "branch": [
+              {
+                "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+                "name": "1.7"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 141,
+          "revision": {
+            "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+            "branch": [
+              {
+                "SHA1": "bb7471f0b2e0a09f9b9dcd3fb3ad42f2031d5c19",
+                "name": "1.7"
+              }
+            ]
+          }
+        },
+        "master": {
+          "marked": {
+            "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+            "branch": [
+              {
+                "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                "name": "master"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 161,
+          "revision": {
+            "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+            "branch": [
+              {
+                "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+                "name": "master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+        "branch": [
+          {
+            "SHA1": "ab34a3b375bcb7ea8d2747d0aaa499b8cfa9dc30",
+            "name": "master"
+          }
+        ]
+      },
+      "scmName": "",
+      "remoteUrls": [
+        "git://github.com/apache/accumulo.git"
+      ]
+    },
+    {},
+    {},
+    {},
+    {
+      "urlName": "testReport",
+      "failCount": 0,
+      "totalCount": 83,
+      "skipCount": 1
+    },
+    {},
+    {},
+    {}
+  ],
+  "artifacts": [],
+  "timestamp": 1447351859242
+}

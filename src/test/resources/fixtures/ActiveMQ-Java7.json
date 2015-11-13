@@ -1,0 +1,46 @@
+{
+  "queueId": 41040,
+  "displayName": "#868",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ-Java7 #868",
+  "estimatedDuration": 15167104,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ-Java7/868/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-12 15:55:29 +0000",
+        "msg": "fixing unit test to dynamically use a free port",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+          "fullName": "christopher.l.shannon"
+        },
+        "paths": [
+          {
+            "file": "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java",
+            "editType": "edit"
+          }
+        ],
+        "comment": "fixing unit test to dynamically use a free port\n",
+        "commitId": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+        "id": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+        "affectedPaths": [
+          "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 18969561,
+  "result": "UNSTABLE",
+  "number": 868,
+  "executor": null,
+  "mavenVersionUsed": "3.0.4",
+  "builtOn": "H10",
+  "id": "868",
+  "artifacts": [],
+  "timestamp": 1447344504364
+}

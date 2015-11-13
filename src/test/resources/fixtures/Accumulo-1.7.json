@@ -1,0 +1,117 @@
+{
+  "queueId": 29120,
+  "displayName": "#159",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Accumulo-1.7 #159",
+  "estimatedDuration": 1604941,
+  "building": false,
+  "url": "https://builds.apache.org/job/Accumulo-1.7/159/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-02 10:45:40 -0500",
+        "msg": "ACCUMULO-3356 Add the explicit default constructor for tests.",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/elserj",
+          "fullName": "elserj"
+        },
+        "paths": [
+          {
+            "file": "server/base/src/main/java/org/apache/accumulo/server/master/balancer/ChaoticLoadBalancer.java",
+            "editType": "edit"
+          }
+        ],
+        "comment": "ACCUMULO-3356 Add the explicit default constructor for tests.\n",
+        "commitId": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+        "id": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+        "affectedPaths": [
+          "server/base/src/main/java/org/apache/accumulo/server/master/balancer/ChaoticLoadBalancer.java"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 315629,
+  "result": "FAILURE",
+  "number": 159,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/elserj",
+      "fullName": "elserj"
+    }
+  ],
+  "executor": null,
+  "mavenVersionUsed": "3.2.1",
+  "builtOn": "jenkins-ubuntu-1404-4gb-6a7",
+  "id": "159",
+  "actions": [
+    {
+      "causes": [
+        {
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {},
+    {},
+    {},
+    {
+      "buildsByBranchName": {
+        "origin/1.7": {
+          "marked": {
+            "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+            "branch": [
+              {
+                "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "name": "origin/1.7"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 159,
+          "revision": {
+            "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+            "branch": [
+              {
+                "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+                "name": "origin/1.7"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+        "branch": [
+          {
+            "SHA1": "b8ffe4c7673cd696f9e18a17f81a1a7b06c45d9f",
+            "name": "origin/1.7"
+          }
+        ]
+      },
+      "scmName": "",
+      "remoteUrls": [
+        "git://git.apache.org/accumulo.git"
+      ]
+    },
+    {},
+    {},
+    {},
+    {
+      "urlName": "testReport",
+      "failCount": 0,
+      "totalCount": 83,
+      "skipCount": 1
+    },
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "artifacts": [],
+  "timestamp": 1446479350960
+}

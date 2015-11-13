@@ -1,0 +1,124 @@
+{
+  "queueId": 41467,
+  "displayName": "#851",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Ambari-branch-2.1 #851",
+  "estimatedDuration": 7109228,
+  "building": false,
+  "url": "https://builds.apache.org/job/Ambari-branch-2.1/851/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-12 14:18:25 -0800",
+        "msg": "AMBARI-13866. SNMPv3 option for SNMP Alert Notification needs to be",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/rzang",
+          "fullName": "rzang"
+        },
+        "paths": [
+          {
+            "file": "ambari-web/app/controllers/main/alerts/manage_alert_notifications_controller.js",
+            "editType": "edit"
+          }
+        ],
+        "comment": "AMBARI-13866. SNMPv3 option for SNMP Alert Notification needs to be\nremoved (rzang)\n",
+        "commitId": "b0f46e7f024a44d31617dd17195f3e9f947b17d6",
+        "id": "b0f46e7f024a44d31617dd17195f3e9f947b17d6",
+        "affectedPaths": [
+          "ambari-web/app/controllers/main/alerts/manage_alert_notifications_controller.js"
+        ],
+        "timestamp": -1
+      },
+      {
+        "date": "2015-11-12 14:45:32 -0800",
+        "msg": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/xiwang",
+          "fullName": "xiwang"
+        },
+        "paths": [
+          {
+            "file": "ambari-web/app/models/upgrade_entity.js",
+            "editType": "edit"
+          },
+          {
+            "file": "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs",
+            "editType": "edit"
+          }
+        ],
+        "comment": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade\nPre-Check failed due MM host.(xiwang)\n",
+        "commitId": "cc77797be2d645d1f1c798617eb837ab04204fdc",
+        "id": "cc77797be2d645d1f1c798617eb837ab04204fdc",
+        "affectedPaths": [
+          "ambari-web/app/models/upgrade_entity.js",
+          "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 7468624,
+  "result": "FAILURE",
+  "number": 851,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/afernandez",
+      "fullName": "afernandez"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/aonishuk",
+      "fullName": "aonishuk"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/dlysnichenko",
+      "fullName": "dlysnichenko"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jaimin",
+      "fullName": "jaimin"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jhurley",
+      "fullName": "jhurley"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jluniya",
+      "fullName": "jluniya"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/rlevas",
+      "fullName": "rlevas"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/rnettleton",
+      "fullName": "rnettleton"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/rzang",
+      "fullName": "rzang"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/smohanty",
+      "fullName": "smohanty"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/swagle",
+      "fullName": "swagle"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/vbrodetskyi",
+      "fullName": "vbrodetskyi"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/xiwang",
+      "fullName": "xiwang"
+    }
+  ],
+  "executor": null,
+  "builtOn": "H2",
+  "id": "851",
+  "artifacts": [],
+  "timestamp": 1447371821366
+}

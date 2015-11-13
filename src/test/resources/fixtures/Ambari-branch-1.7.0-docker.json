@@ -1,0 +1,98 @@
+{
+  "queueId": -1,
+  "displayName": "#181",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Ambari-branch-1.7.0-docker #181",
+  "estimatedDuration": 2322629,
+  "building": false,
+  "url": "https://builds.apache.org/job/Ambari-branch-1.7.0-docker/181/",
+  "duration": 2322629,
+  "result": "SUCCESS",
+  "number": 181,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/jhurley",
+      "fullName": "jhurley"
+    }
+  ],
+  "executor": null,
+  "builtOn": "ubuntu-6",
+  "id": "2015-03-05_19-55-41",
+  "actions": [
+    {
+      "causes": [
+        {
+          "shortDescription": "Started by an SCM change"
+        },
+        {
+          "shortDescription": "Started by an SCM change"
+        },
+        {
+          "shortDescription": "Started by an SCM change"
+        },
+        {
+          "shortDescription": "Started by an SCM change"
+        },
+        {
+          "shortDescription": "Started by an SCM change"
+        },
+        {
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {},
+    {},
+    {
+      "buildsByBranchName": {
+        "origin/branch-1.7.0": {
+          "marked": {
+            "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+            "branch": [
+              {
+                "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                "name": "origin/branch-1.7.0"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 181,
+          "revision": {
+            "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+            "branch": [
+              {
+                "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+                "name": "origin/branch-1.7.0"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+        "branch": [
+          {
+            "SHA1": "dd572d3544eb6a36c78155ae88ac423a16922d00",
+            "name": "origin/branch-1.7.0"
+          }
+        ]
+      },
+      "scmName": "",
+      "remoteUrls": [
+        "http://git-wip-us.apache.org/repos/asf/ambari.git"
+      ]
+    },
+    {},
+    {},
+    {},
+    {
+      "urlName": "testReport",
+      "failCount": 0,
+      "totalCount": 2203,
+      "skipCount": 15
+    },
+    {}
+  ],
+  "timestamp": 1425585341000
+}

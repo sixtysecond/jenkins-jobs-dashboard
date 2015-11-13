@@ -1,0 +1,49 @@
+{
+  "queueId": 41548,
+  "displayName": "#3825",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Ambari-trunk-Commit #3825",
+  "estimatedDuration": 7036770,
+  "building": false,
+  "url": "https://builds.apache.org/job/Ambari-trunk-Commit/3825/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-12 14:54:28 -0800",
+        "msg": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/xiwang",
+          "fullName": "xiwang"
+        },
+        "paths": [
+          {
+            "file": "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs",
+            "editType": "edit"
+          },
+          {
+            "file": "ambari-web/app/models/upgrade_entity.js",
+            "editType": "edit"
+          }
+        ],
+        "comment": "AMBARI-13868. Not possible to pause  upgrade if  Finalize Upgrade\nPre-Check failed due MM host.(xiwang)\n",
+        "commitId": "8dc133502028dd4f402c1a4516a8325849c1d696",
+        "id": "8dc133502028dd4f402c1a4516a8325849c1d696",
+        "affectedPaths": [
+          "ambari-web/app/models/upgrade_entity.js",
+          "ambari-web/app/templates/main/admin/stack_upgrade/stack_upgrade_wizard.hbs"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 7115805,
+  "result": "FAILURE",
+  "number": 3825,
+  "executor": null,
+  "builtOn": "H3",
+  "id": "3825",
+  "artifacts": [],
+  "timestamp": 1447375642597
+}

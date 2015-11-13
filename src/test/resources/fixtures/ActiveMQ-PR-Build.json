@@ -1,0 +1,55 @@
+{
+  "queueId": 36125,
+  "displayName": "#129",
+  "keepLog": false,
+  "description": "<a href=\"https://github.com/apache/activemq/pull/156\">GitHub pull request #156 to apache/activemq</a>",
+  "fullDisplayName": "ActiveMQ-PR-Build #129",
+  "estimatedDuration": 527965,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ-PR-Build/129/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-09 09:27:47 +0100",
+        "msg": "AMQ-6036: Parsing message selector for wildcard matches for",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/patrik",
+          "fullName": "patrik"
+        },
+        "paths": [
+          {
+            "file": "activemq-broker/src/test/java/org/apache/activemq/plugin/SubQueueSelectorCacheBrokerWildcardTest.java",
+            "editType": "add"
+          },
+          {
+            "file": "activemq-broker/src/main/java/org/apache/activemq/plugin/SubQueueSelectorCacheBroker.java",
+            "editType": "edit"
+          }
+        ],
+        "comment": "AMQ-6036: Parsing message selector for wildcard matches for\nignoreWildcardSelectors feature\nhttps://issues.apache.org/jira/browse/AMQ-6036\n",
+        "commitId": "201497448db49ea8921d8c4982f330fec171fd5f",
+        "id": "201497448db49ea8921d8c4982f330fec171fd5f",
+        "affectedPaths": [
+          "activemq-broker/src/test/java/org/apache/activemq/plugin/SubQueueSelectorCacheBrokerWildcardTest.java",
+          "activemq-broker/src/main/java/org/apache/activemq/plugin/SubQueueSelectorCacheBroker.java"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 502134,
+  "result": "SUCCESS",
+  "number": 129,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/patrik",
+      "fullName": "patrik"
+    }
+  ],
+  "executor": null,
+  "builtOn": "ubuntu-4",
+  "id": "129",
+  "artifacts": [],
+  "timestamp": 1447058084315
+}

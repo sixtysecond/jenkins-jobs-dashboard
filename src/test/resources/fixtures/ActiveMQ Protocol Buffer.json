@@ -1,0 +1,31 @@
+{
+  "queueId": -1,
+  "displayName": "#16",
+  "mavenArtifacts": null,
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ Protocol Buffer #16",
+  "estimatedDuration": 4716,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ%20Protocol%20Buffer/16/",
+  "changeSet": {
+    "kind": "svn",
+    "revisions": [
+      {
+        "module": "https://svn.apache.org/repos/asf/activemq/activemq-protobuf/trunk",
+        "revision": 981838
+      }
+    ],
+    "items": []
+  },
+  "duration": 4716,
+  "result": "FAILURE",
+  "number": 16,
+  "culprits": [],
+  "executor": null,
+  "mavenVersionUsed": "2.0.10",
+  "builtOn": "ubuntu-6",
+  "id": "2015-05-30_03-00-13",
+  "artifacts": [],
+  "timestamp": 1432954813000
+}

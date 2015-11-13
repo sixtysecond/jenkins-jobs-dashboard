@@ -1,0 +1,61 @@
+{
+  "queueId": -1,
+  "displayName": "#425",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ-Apollo-Deploy #425",
+  "estimatedDuration": 933415,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ-Apollo-Deploy/425/",
+  "changeSet": {
+    "kind": "svn",
+    "revisions": [
+      {
+        "module": "https://svn.apache.org/repos/asf/activemq/activemq-apollo/trunk",
+        "revision": 1513995
+      }
+    ],
+    "items": []
+  },
+  "duration": 933415,
+  "result": "SUCCESS",
+  "number": 425,
+  "culprits": [],
+  "executor": null,
+  "mavenVersionUsed": "3.0.2",
+  "builtOn": "ubuntu-1",
+  "id": "2015-05-30_03-00-08",
+  "actions": [
+    {
+      "causes": [
+        {
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "scorecard": {
+        "scores": [
+          {
+            "description": "The build was successful",
+            "ruleName": "Build result",
+            "rulesetName": "Build result",
+            "value": 1
+          }
+        ],
+        "totalPoints": 1
+      },
+      "participants": []
+    },
+    {}
+  ],
+  "artifacts": [],
+  "timestamp": 1432954808000
+}

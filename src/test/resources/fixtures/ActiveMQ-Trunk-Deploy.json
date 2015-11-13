@@ -1,0 +1,178 @@
+{
+  "queueId": 41730,
+  "displayName": "#1498",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ-Trunk-Deploy #1498",
+  "estimatedDuration": 820321,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ-Trunk-Deploy/1498/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-12 15:55:29 +0000",
+        "msg": "fixing unit test to dynamically use a free port",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+          "fullName": "christopher.l.shannon"
+        },
+        "paths": [
+          {
+            "file": "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java",
+            "editType": "edit"
+          }
+        ],
+        "comment": "fixing unit test to dynamically use a free port\n",
+        "commitId": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+        "id": "86ead7e9d28cf79116d16b676ecaabbc07fc2465",
+        "affectedPaths": [
+          "activemq-unit-tests/src/test/java/org/apache/activemq/usage/PeriodicDiskUsageLimitTest.java"
+        ],
+        "timestamp": -1
+      },
+      {
+        "date": "2015-11-12 16:51:29 -0500",
+        "msg": "https://issues.apache.org/jira/browse/AMQ-5957",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/tabish121",
+          "fullName": "tabish121"
+        },
+        "paths": [
+          {
+            "file": "pom.xml",
+            "editType": "edit"
+          }
+        ],
+        "comment": "https://issues.apache.org/jira/browse/AMQ-5957\nUpdate HttpCore to 4.4.4\n",
+        "commitId": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+        "id": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+        "affectedPaths": [
+          "pom.xml"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 829449,
+  "result": "SUCCESS",
+  "number": 1498,
+  "culprits": [
+    {
+      "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+      "fullName": "christopher.l.shannon"
+    },
+    {
+      "absoluteUrl": "https://builds.apache.org/user/tabish121",
+      "fullName": "tabish121"
+    }
+  ],
+  "executor": null,
+  "mavenVersionUsed": "3.0.4",
+  "builtOn": "ubuntu-4",
+  "id": "1498",
+  "actions": [
+    {
+      "causes": [
+        {
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {},
+    {},
+    {},
+    {
+      "buildsByBranchName": {
+        "origin/trunk": {
+          "marked": {
+            "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+            "branch": [
+              {
+                "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+                "name": "origin/trunk"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 1224,
+          "revision": {
+            "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+            "branch": [
+              {
+                "SHA1": "3155c625c69e3251e3ecd73d50f1dc5ed48387d3",
+                "name": "origin/trunk"
+              }
+            ]
+          }
+        },
+        "origin/master": {
+          "marked": {
+            "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+            "branch": [
+              {
+                "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                "name": "origin/master"
+              }
+            ]
+          },
+          "buildResult": null,
+          "buildNumber": 1498,
+          "revision": {
+            "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+            "branch": [
+              {
+                "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+                "name": "origin/master"
+              }
+            ]
+          }
+        }
+      },
+      "lastBuiltRevision": {
+        "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+        "branch": [
+          {
+            "SHA1": "16e66f9d89f6bb076d717da3164a9c13c3250bc4",
+            "name": "origin/master"
+          }
+        ]
+      },
+      "scmName": "",
+      "remoteUrls": [
+        "https://git-wip-us.apache.org/repos/asf/activemq.git"
+      ]
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "scorecard": {
+        "scores": [
+          {
+            "description": "The build was successful",
+            "ruleName": "Build result",
+            "rulesetName": "Build result",
+            "value": 1
+          }
+        ],
+        "totalPoints": 1
+      },
+      "participants": [
+        {
+          "absoluteUrl": "https://builds.apache.org/user/christopher.l.shannon",
+          "fullName": "christopher.l.shannon"
+        },
+        {
+          "absoluteUrl": "https://builds.apache.org/user/tabish121",
+          "fullName": "tabish121"
+        }
+      ]
+    }
+  ],
+  "artifacts": [],
+  "timestamp": 1447384347367
+}

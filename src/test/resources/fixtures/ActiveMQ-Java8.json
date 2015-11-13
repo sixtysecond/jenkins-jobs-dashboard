@@ -1,0 +1,20 @@
+{
+  "queueId": 41100,
+  "displayName": "#531",
+  "mavenArtifacts": {},
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ-Java8 #531",
+  "estimatedDuration": 14906743,
+  "building": true,
+  "url": "https://builds.apache.org/job/ActiveMQ-Java8/531/",
+  "duration": 0,
+  "result": "SUCCESS",
+  "number": 531,
+  "executor": {},
+  "mavenVersionUsed": "3.0.4",
+  "builtOn": "H10",
+  "id": "531",
+  "artifacts": [],
+  "timestamp": 1447377866723
+}

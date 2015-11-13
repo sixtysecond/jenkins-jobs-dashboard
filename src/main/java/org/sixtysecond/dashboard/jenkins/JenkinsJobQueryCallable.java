@@ -65,9 +65,12 @@ public class JenkinsJobQueryCallable implements Callable<JSONObject> {
 
     public Map<String, JSONObject> getJobsForUrl(String jenknisServerUrl) {
         String jobsUrl = jenknisServerUrl + "/api/json?pretty=false";
-        //        System.out.println("jobsUrl="+jobsUrl);
+                System.out.println("jobsUrl="+jobsUrl);
         Response response = given().when()
+                .relaxedHTTPSValidation()
+                .redirects().follow(true)
                 .get(jobsUrl)
+
                 .andReturn();
 
         if (response.getStatusCode() != 200) {

@@ -1,0 +1,86 @@
+{
+  "queueId": 41523,
+  "displayName": "#4276",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "Ambari-trunk-test-patch #4276",
+  "estimatedDuration": 3358485,
+  "building": false,
+  "url": "https://builds.apache.org/job/Ambari-trunk-test-patch/4276/",
+  "changeSet": {
+    "kind": null,
+    "items": []
+  },
+  "duration": 1101017,
+  "result": "SUCCESS",
+  "number": 4276,
+  "culprits": [],
+  "executor": null,
+  "builtOn": "H9",
+  "id": "4276",
+  "actions": [
+    {
+      "parameters": [
+        {
+          "name": "JIRA_NUMBER",
+          "value": "AMBARI-13868"
+        }
+      ]
+    },
+    {
+      "causes": [
+        {
+          "note": null,
+          "shortDescription": "Started by remote host 127.0.0.1",
+          "addr": "127.0.0.1"
+        }
+      ]
+    },
+    {},
+    {},
+    {}
+  ],
+  "artifacts": [
+    {
+      "fileName": "filteredPatchJavacWarnings.txt",
+      "relativePath": "patch-work/filteredPatchJavacWarnings.txt",
+      "displayPath": "filteredPatchJavacWarnings.txt"
+    },
+    {
+      "fileName": "filteredTrunkJavacWarnings.txt",
+      "relativePath": "patch-work/filteredTrunkJavacWarnings.txt",
+      "displayPath": "filteredTrunkJavacWarnings.txt"
+    },
+    {
+      "fileName": "patchJavacWarnings.txt",
+      "relativePath": "patch-work/patchJavacWarnings.txt",
+      "displayPath": "patchJavacWarnings.txt"
+    },
+    {
+      "fileName": "patchReleaseAuditOutput.txt",
+      "relativePath": "patch-work/patchReleaseAuditOutput.txt",
+      "displayPath": "patchReleaseAuditOutput.txt"
+    },
+    {
+      "fileName": "patchReleaseAuditWarnings.txt",
+      "relativePath": "patch-work/patchReleaseAuditWarnings.txt",
+      "displayPath": "patchReleaseAuditWarnings.txt"
+    },
+    {
+      "fileName": "testrun_ambari-web.txt",
+      "relativePath": "patch-work/testrun_ambari-web.txt",
+      "displayPath": "testrun_ambari-web.txt"
+    },
+    {
+      "fileName": "trunkCompile.txt",
+      "relativePath": "patch-work/trunkCompile.txt",
+      "displayPath": "trunkCompile.txt"
+    },
+    {
+      "fileName": "trunkJavacWarnings.txt",
+      "relativePath": "patch-work/trunkJavacWarnings.txt",
+      "displayPath": "trunkJavacWarnings.txt"
+    }
+  ],
+  "timestamp": 1447370482030
+}

@@ -1,0 +1,44 @@
+{
+  "queueId": 40093,
+  "displayName": "#346",
+  "keepLog": false,
+  "description": null,
+  "fullDisplayName": "ActiveMQ-Artemis-Nightly-Regression-Test #346",
+  "estimatedDuration": 10869651,
+  "building": false,
+  "url": "https://builds.apache.org/job/ActiveMQ-Artemis-Nightly-Regression-Test/346/",
+  "changeSet": {
+    "kind": "git",
+    "items": [
+      {
+        "date": "2015-11-11 17:04:46 -0500",
+        "msg": "small tweak on test",
+        "author": {
+          "absoluteUrl": "https://builds.apache.org/user/clebertsuconic",
+          "fullName": "clebertsuconic"
+        },
+        "paths": [
+          {
+            "file": "artemis-cli/src/test/java/org/apache/activemq/cli/test/ArtemisTest.java",
+            "editType": "edit"
+          }
+        ],
+        "comment": "small tweak on test\n",
+        "commitId": "06b0c3119309142079d71e15ae4f752e2da12edf",
+        "id": "06b0c3119309142079d71e15ae4f752e2da12edf",
+        "affectedPaths": [
+          "artemis-cli/src/test/java/org/apache/activemq/cli/test/ArtemisTest.java"
+        ],
+        "timestamp": -1
+      }
+    ]
+  },
+  "duration": 13073098,
+  "result": "UNSTABLE",
+  "number": 346,
+  "executor": null,
+  "builtOn": "ubuntu3",
+  "id": "346",
+  "artifacts": [],
+  "timestamp": 1447288894775
+}
