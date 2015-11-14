@@ -1,5 +1,5 @@
 logging:
-  level: TRACE
+  level: ERROR
   appenders:
     - type: console
       threshold: ALL
