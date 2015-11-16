@@ -7,8 +7,8 @@ import io.dropwizard.jackson.Jackson;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.json.JSONObject;
 import org.junit.Test;
-import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
-import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
+import com.github.sixtysecond.cicdash.jenkins.JenkinsJobQuery;
+import com.github.sixtysecond.cicdash.jenkins.JenkinsJobQueryCallable;
 
 import java.io.IOException;
 import java.util.ArrayList;

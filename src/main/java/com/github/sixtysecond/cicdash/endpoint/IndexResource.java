@@ -1,4 +1,4 @@
-package com.example.helloworld.resources;
+package com.github.sixtysecond.cicdash.endpoint;
 
 import com.codahale.metrics.annotation.Timed;
 

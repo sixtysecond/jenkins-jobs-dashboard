@@ -1,4 +1,4 @@
-package org.sixtysecond.dashboard.jenkins;
+package com.github.sixtysecond.cicdash.jenkins;
 
 /**
  * Created by edriggs on 11/8/15.

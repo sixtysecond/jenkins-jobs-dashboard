@@ -1,7 +1,7 @@
 function pipelineToTable(pipeline) {
     var pipelineHtml = '<div class="pipeline"><tr><td>';
 
-    pipelineHtml += '<div class="query_wrapper"">';
+    pipelineHtml += '<div class="query_wrapper">';
     pipelineHtml += '<fieldset  class="query"><legend>query</legend>';
     pipelineHtml += '<div class="pipeline_property">pattern: ' + pipeline.jobNamePattern.toString() + '</div>';
     var serverUrl = pipeline.jenkinsServerUrl.toString();

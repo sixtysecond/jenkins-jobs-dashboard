@@ -1,4 +1,4 @@
-package org.sixtysecond.dashboard.jenkins;
+package com.github.sixtysecond.cicdash.jenkins;
 
 import org.json.JSONObject;
 

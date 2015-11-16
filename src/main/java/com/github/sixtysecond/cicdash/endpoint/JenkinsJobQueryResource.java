@@ -1,11 +1,11 @@
-package com.example.helloworld.resources;
+package com.github.sixtysecond.cicdash.endpoint;
 
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.base.Optional;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
-import org.sixtysecond.dashboard.jenkins.JenkinsJobQueryCallable;
+import com.github.sixtysecond.cicdash.jenkins.JenkinsJobQuery;
+import com.github.sixtysecond.cicdash.jenkins.JenkinsJobQueryCallable;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

@@ -1,16 +1,16 @@
 package org.sixtysecond.dashboard;
 
 
-import com.example.helloworld.HelloWorldApplication;
-import com.example.helloworld.HelloWorldConfiguration;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.sixtysecond.cicdash.CICDashApplication;
+import com.github.sixtysecond.cicdash.CICDashConfiguration;
+import com.github.sixtysecond.cicdash.jenkins.JenkinsJobQuery;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit.DropwizardAppRule;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 import org.junit.Rule;
 import org.junit.Test;
-import org.sixtysecond.dashboard.jenkins.JenkinsJobQuery;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
@@ -23,9 +23,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class JenkinsQueryIntegrationTest {
     @Rule
-    public final DropwizardAppRule<HelloWorldConfiguration> RULE =
-            new DropwizardAppRule<HelloWorldConfiguration>(HelloWorldApplication.class,
-                    ResourceHelpers.resourceFilePath("hello-world.yml"));
+    public final DropwizardAppRule<CICDashConfiguration> RULE =
+            new DropwizardAppRule<CICDashConfiguration>(CICDashApplication.class,
+                    ResourceHelpers.resourceFilePath("cicdash.yml"));
 
     @Test
     public void runServerTest() throws JsonProcessingException {

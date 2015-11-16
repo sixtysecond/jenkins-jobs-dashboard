@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.sixtysecond</groupId>
-  <artifactId>jenkins-jobs-dashboard</artifactId>
-  <name>jenkins-job-dashboard</name>
+  <artifactId>cicdash</artifactId>
+  <name>cicidash</name>
   <version>0.0.1-SNAPSHOT</version>
-  <description>Dashboard aggregator for jenkins job builds and pipelines</description>
+  <description>Dashboard aggregator for job builds and pipelines</description>
   <licenses>
     <license>
       <name>The MIT license</name>
@@ -28,7 +28,7 @@
               <transformers>
                 <transformer />
                 <transformer>
-                  <mainClass>com.example.helloworld.HelloWorldApplication</mainClass>
+                  <mainClass>com.github.sixtysecond.cicdash.CICDashApplication</mainClass>
                 </transformer>
               </transformers>
             </configuration>
