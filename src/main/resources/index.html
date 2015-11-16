@@ -6,7 +6,7 @@
     <!--<script type="text/javascript" src="render-pipelines.js"></script>-->
 
 </head>
-<div id="dashboard" name="dashboard"></div>
+<div id="dashboard_wrapper" name="dashboard_wrapper" class="dashboard_wrapper"></div>
 <h1>Jenkins Job Dashboard</h1>
 
 <h2>TODOS</h2>
@@ -77,15 +77,10 @@
 <h2>sample payload #2:</h2>
 <pre>
 
-
 [
     {
-        "jenkinsServerUrl" : "http://you-jenkins-server-goes-here.domain"
-        ,"jenkinsJobPattern" : "job name regex goes here"
-    },
-    {
-        "jenkinsServerUrl" : "https://fake-jenkins-server.org"
-        ,"jobNamePattern" : "widget.*?"
+        "jenkinsServerUrl" : "https://builds.apache.org"
+        ,"jobNamePattern" : "Accumulo.*?"
     }
 ]
 
